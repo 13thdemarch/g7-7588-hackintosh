@@ -5,14 +5,14 @@
  * 
  * Disassembling to symbolic ASL+ operators
  *
- * Disassembly of iASLNb8q4k.aml, Tue Mar  2 12:07:14 2021
+ * Disassembly of iASL7LTibs.aml, Mon Mar  8 08:52:11 2021
  *
  * Original Table Header:
  *     Signature        "SSDT"
- *     Length           0x000011E8 (4584)
+ *     Length           0x00001110 (4368)
  *     Revision         0x02
- *     Checksum         0x97
- *     OEM ID           "Dell"
+ *     Checksum         0x71
+ *     OEM ID           "DELL"
  *     OEM Table ID     "Mizuhara"
  *     OEM Revision     0x00001000 (4096)
  *     Compiler ID      "INTL"
@@ -89,7 +89,7 @@ DefinitionBlock ("", "SSDT", 2, "DELL", "Mizuhara", 0x00001000)
                     }, 
 
                     "ports", 
-                    Package (0x1C)
+                    Package (0x14)
                     {
                         "HS01", 
                         Package (0x06)
@@ -145,24 +145,6 @@ DefinitionBlock ("", "SSDT", 2, "DELL", "Mizuhara", 0x00001000)
                             }
                         }, 
 
-                        "HS04", 
-                        Package (0x06)
-                        {
-                            "name", 
-                            Buffer (0x05)
-                            {
-                                "HS04"
-                            }, 
-
-                            "UsbConnector", 
-                            0x03, 
-                            "port", 
-                            Buffer (0x04)
-                            {
-                                 0x04, 0x00, 0x00, 0x00                           // ....
-                            }
-                        }, 
-
                         "HS05", 
                         Package (0x06)
                         {
@@ -178,24 +160,6 @@ DefinitionBlock ("", "SSDT", 2, "DELL", "Mizuhara", 0x00001000)
                             Buffer (0x04)
                             {
                                  0x05, 0x00, 0x00, 0x00                           // ....
-                            }
-                        }, 
-
-                        "HS06", 
-                        Package (0x06)
-                        {
-                            "name", 
-                            Buffer (0x05)
-                            {
-                                "HS06"
-                            }, 
-
-                            "UsbConnector", 
-                            0x03, 
-                            "port", 
-                            Buffer (0x04)
-                            {
-                                 0x06, 0x00, 0x00, 0x00                           // ....
                             }
                         }, 
 
@@ -217,24 +181,6 @@ DefinitionBlock ("", "SSDT", 2, "DELL", "Mizuhara", 0x00001000)
                             }
                         }, 
 
-                        "HS08", 
-                        Package (0x06)
-                        {
-                            "name", 
-                            Buffer (0x05)
-                            {
-                                "HS08"
-                            }, 
-
-                            "UsbConnector", 
-                            0x03, 
-                            "port", 
-                            Buffer (0x04)
-                            {
-                                 0x08, 0x00, 0x00, 0x00                           // ....
-                            }
-                        }, 
-
                         "HS09", 
                         Package (0x06)
                         {
@@ -250,24 +196,6 @@ DefinitionBlock ("", "SSDT", 2, "DELL", "Mizuhara", 0x00001000)
                             Buffer (0x04)
                             {
                                  0x09, 0x00, 0x00, 0x00                           // ....
-                            }
-                        }, 
-
-                        "HS10", 
-                        Package (0x06)
-                        {
-                            "name", 
-                            Buffer (0x05)
-                            {
-                                "HS10"
-                            }, 
-
-                            "UsbConnector", 
-                            0x03, 
-                            "port", 
-                            Buffer (0x04)
-                            {
-                                 0x0A, 0x00, 0x00, 0x00                           // ....
                             }
                         }, 
 
