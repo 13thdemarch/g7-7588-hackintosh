@@ -1,7 +1,7 @@
 Dell G7 7588 OpenCore Changelog
 ===============================
 #### v0.6.8
-0.6.8 Changelog:
+v0.6.8 Changelog:
 - Bump to OC 0.6.8.
 - Update latest kexts.
 - Remove brightness keys ACPI rename method (BRT6, OSID, included _OSI).
