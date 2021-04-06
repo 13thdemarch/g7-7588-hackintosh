@@ -1,8 +1,7 @@
 Dell G7 7588 OpenCore Changelog
 ===============================
-#### v0.6.8
-v0.6.8 Changelog:
-- Bump to OC 0.6.8.
+#### v0.6.7+
+- Bump to OC 0.6.7 Plus :< (Why plus: Because current version of VoodooI2C can't run on OC 0.6.8).
 - Update latest kexts.
 - Remove brightness keys ACPI rename method (BRT6, OSID, included _OSI).
 - Brightness keys now are worked well with BrightnessKeys.kext.
@@ -13,6 +12,8 @@ v0.6.8 Changelog:
 	* If there is no external display, the machine will sleep.
 	* If the external display is connected, the internal display will turn off. The working screen now is external display only. Press Fn + Insert again to wake internal display, both displays will be normal.
 - Add some extra hotpatches for Dell machine (thanks to @daliansky).
+- Improve touchpad gestures.
+- Add CFGUnlock.efi for automatically unlocking MSR 0x02
 
 #### v0.6.7
 - Latest kernel extensions.

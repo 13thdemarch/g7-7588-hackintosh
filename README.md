@@ -1,20 +1,23 @@
 # Dell G7 Gaming 7588 Hackintosh
 
-![Screenshot](screenshot/screenshot.png)
-- macOS: Big Sur latest version (11.2.2)
-- Bootloader: OpenCore 0.6.
-- EFI can be used for both USB Installer and booting.
+![Screenshot](screenshot/desktop.png)
+- macOS: 
+  - Big Sur 11.2.3 ✅
+  - Catalina 10.15.7 ✅
+  - Mojave 10.14.6 ✅
+- Bootloader: OpenCore 0.6.8
+- EFI can be used for both for USB Installer and booting from SSD.
 
 ## 🔍 System Overview
 * Dell G7 7588
     * CPU: i7-8750H
     * RAM: 2 x 8GB DDR4 (upgraded)
-    * Display: NV156FHM 1080p 144Hz (upgraded)
+    * Display: BOE NV156FHM 1080p 144Hz (upgraded)
     * SSD:
-        * M.2 NVME Western Digital SN730 256GB for macOS
-        * 2.5 inch SATAIII Crucial CT500MX500SSD1 500GB for Windows and Data
+        * M.2 NVME Western Digital SN730 256GB for macOS and Windows
+        * 2.5 inch SATAIII Crucial CT500MX500SSD1 500GB for Data
     * Sound: Realtek ALC256
-    * Wireless + Bluetooth: Replaced with DW1560 aka BCM94352Z
+    * Wireless + Bluetooth: Replaced with DW1560 (BCM94352Z chipset)
     * VGA: Nvidia GTX 1050Ti (disabled)
     * BIOS: 1.15.0 (latest)
 
@@ -24,12 +27,12 @@
 | ------------- | ------------- |
 | CPU Power Management | ✅ Working |
 | Sleep/Wake | ✅ Working |
-| Intel UHD630 Graphic acceleration | ✅ Working |
+| Intel UHD630 Graphics Acceleration | ✅ Working |
 | Intel Quartz Extreme and Intel Core Image (QE/CI) | ✅ Working |
 | Brightness control slider | ✅ Working |
-| Special function keys (audio, brightness,...) | ✅ Working |
+| Special function keys (audio, brightness, sleep...) | ✅ Working |
 | Ethernet | ✅ Working |
-| Audio | ✅ Working | 
+| Audio | ✅ Working |
 | USB-C Port | ✅ Working |
 | Touchpad | ✅ Working |
 | Battery | ✅ Working |
@@ -62,6 +65,7 @@
     - Secure Boot Enable: **Disabled**
     - Intel SGX: **Disabled**
     - VT for Direct I/O: **Disabled**
+    - Wake on USB: **Disabled**
     - Auto OS Recovery Threshold: **Disabled**
     - SupportAssist OS Recovery: **Disabled**
 
@@ -69,11 +73,12 @@
 This section talks about configuring the EFI folder for the hardware.
 
 ### Audio
-* For ALC256 on this Dell, I use `layout-id = <56>`.
+* For ALC256 on this G7, I use `layout-id = <56>`.
 * Without any modifications, the headphone jack is buggy. External microphones aren't detected and the audio output may randomly stop working or start making weird noises. To permanently fix this issue, please go to [Post-Install](https://github.com/rex-lapis/Dell_G7_7588_OpenCore_Hackintosh#tweaks) for more information.
 
 ### Wi-Fi/Bluetooth
 * The stock Intel AC 9560 now can be worked well with [OpenIntelWireless](https://github.com/OpenIntelWireless), but it is not stable at all. So I replaced it with the Dell DW1560 card.
+  * Note: This EFI can work well with Intel card, so you don't need to worry much.
 * If you have DW1820a card, it is worked too. But trust me, you don't want to use that card! The Wi-Fi speed is a bit slower and has problems with some 5GHz networks. Bluetooth sometimes has issues too.
 
 ### Graphic Display
@@ -82,13 +87,13 @@ The NVIDIA GPU is not supported so it is disabled in SSDT.
 The default BIOS DVMT pre-alloc value of `64MB` is sufficient and does not need to be changed.
 #### Enabling acceleration
 * DeviceProperties/Add/PciRoot(0x0)/Pci(0x2,0x0)
-  * `AAPL,ig-platform-id = <0x3EA50009>`
+  * `AAPL,ig-platform-id = <3E9B0000>`
 #### Fixing backlight registers on CoffeeLake platform
 * DeviceProperties/Add/PciRoot(0x0)/Pci(0x2,0x0)
   * `enable-backlight-registers-fix = <01000000>`
 #### Enabling external display support
-* Boot Argument
-  * `agdpmod=vit9696`
+* DeviceProperties/Add/PciRoot(0x0)/Pci(0x2,0x0)
+  * `agdpmod = <vit9696>`
 
 ### Sleep, Wake and Hibernation
 * Hibernation is not supported on a Hackintosh and everything related to it should be completely disabled. Disabling additional features prevents random wakeups while the lid is closed. After every update, these settings should be reapplied manually.
@@ -101,6 +106,7 @@ sudo pmset -a autopoweroff 0
 sudo pmset -a powernap 0
 sudo pmset -a proximitywake 0
 ```
+* Sleep and wake are improved and very fast now. Also, you can use shortcut key `Fn + Insert` to sleep this machine, likes Windows. For more infomation, please check the [OpenCore 0.6.8](https://github.com/rex-lapis/Hackintosh-Dell-G7-7588-OpenCore/blob/main/Changelog.md#v068) changelog.
 
 ### CPU Performance
 * CPU power management is done by `CPUFriend.kext` while `CPUFriendDataProvider.kext` defines how it should be done. `CPUFriendDataProvider.kext` is generated for a specific CPU and power setting. The one supplied in this repository was made for the i7-8750H. In case you have another CPU, you can use [one-key-cpufriend](https://github.com/stevezhengshiqi/one-key-cpufriend) to generate your own `CPUFriendDataProvider.kext`.
@@ -119,11 +125,14 @@ sudo pmset -a proximitywake 0
 
 ## 🔧 Tweaks
 * There is a script file in `Post-Install` folder. Run it after you're already finished installing macOS. It will help to fix the output and input audio when you plug 3.5mm headphone/headset/external speaker in, and disable hibernation for enhancing sleep.
+
 * Disable CFG-Lock (Highly recommend):
-  * Run `modGRUBShell.efi` at OpenCore menu boot screen.
-  * When `> grub` show up, type `setup_var 0x5BD 0x00`, hit Enter.
-  * The screen will show `setting offset 0x5bd to 0x00`, that done. Then type `reboot` and hit Enter.
-  * Now you can change `AppleXcpmCfgLock` in Kernel/Quirks from `True` to `False`.
+  * Run `CFGUnlock.efi` at OpenCore menu boot screen.
+  * If success, now you can change `AppleXcpmCfgLock` in `Kernel/Quirks` from `True` to `False`. You can verify using `VerifyMsrE2.efi`.
+* Increase Gfx Total Memory:
+  * Run `modGRUBShell.efi`
+  * When `> grub` show up, type `setup_var 0x8D3 0x03`, hit Enter.
+  * The screen will show `setting offset 0x8d3 to 0x03`, that done. Then type `reboot` and hit Enter.
 
 ## Credit
 * Apple for macOS.
