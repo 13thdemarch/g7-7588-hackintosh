@@ -1,7 +1,12 @@
 Dell G7 7588 OpenCore Changelog
 ===============================
+#### v0.6.8
+- Bump to OC 0.6.8.
+- Everything is fine now.
+- VoodooI2C 2.6.5 works well.
+
 #### v0.6.7+
-- Bump to OC 0.6.7 Plus :< (Why plus: Because current version of VoodooI2C can't run on OC 0.6.8).
+- Bump to OC 0.6.7 Plus :< ~~(Why plus: Because current version of VoodooI2C can't run on OC 0.6.8)~~.
 - Update latest kexts.
 - Remove brightness keys ACPI rename method (BRT6, OSID, included _OSI).
 - Brightness keys now are worked well with BrightnessKeys.kext.
