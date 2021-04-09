@@ -68,7 +68,7 @@
 				<key>Enabled</key>
 				<true/>
 				<key>Path</key>
-				<string>SSDT-LIGHT.aml</string>
+				<string>SSDT-DELL-SPECIAL.aml</string>
 			</dict>
 			<dict>
 				<key>Comment</key>
