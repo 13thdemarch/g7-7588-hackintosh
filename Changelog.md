@@ -1,5 +1,15 @@
 Dell G7 7588 OpenCore Changelog
 ===============================
+#### v0.6.9
+- Bump to OC 0.6.9.
+- Update lastest kexts.
+- Remove Device (UIAC) for USB mapping, replaced with USBMap.kext.
+- Merge all hotpatches SSDT into one file. You can check SSDT.dsl or the list of hotpatches if you want to know what are inside.
+- Change graphic ig-platform-id back to `0900A53E` (better than `00009B3E` when working with Final Cut Pro or Premiere Pro)
+- Change audio layout-id back to 13 for the stability and the quality.
+- Add audio property `alctsel = <01000000>` for fixing missing audio if rebooting from Windows to macOS.
+- Make the PCI more cleaner.
+
 #### v0.6.8
 - Bump to OC 0.6.8.
 - Everything is fine now.
@@ -47,5 +57,4 @@ Dell G7 7588 OpenCore Changelog
 - Lastest kernel extensions.
 - Change AAPL,ig-platform-id back to 0900A53E.
 - Change layout-id for audio back to 21.
-
 
