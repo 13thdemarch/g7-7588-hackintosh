@@ -2,10 +2,10 @@
 
 ![Screenshot](screenshot/desktop.png)
 - macOS: 
-  - Big Sur 11.2.3 ✅
+  - Big Sur 11.3.1 ✅
   - Catalina 10.15.7 ✅
   - Mojave 10.14.6 ✅
-- Bootloader: OpenCore 0.6.8
+- Bootloader: OpenCore 0.6.9
 - EFI can be used for both for USB Installer and booting from SSD.
 
 ## 🔍 System Overview
@@ -14,8 +14,8 @@
     * RAM: 2 x 8GB DDR4 (upgraded)
     * Display: BOE NV156FHM 1080p 144Hz (upgraded)
     * SSD:
-        * M.2 NVME Western Digital SN730 256GB for macOS and Windows
-        * 2.5 inch SATAIII Crucial CT500MX500SSD1 500GB for Data
+        * NVMe SSD Western Digital SN730 256GB for macOS and Windows
+        * SATA HDD Western Digital Black 500GB for Data
     * Sound: Realtek ALC256
     * Wireless + Bluetooth: Replaced with DW1560 (BCM94352Z chipset)
     * VGA: Nvidia GTX 1050Ti (disabled)
@@ -73,8 +73,11 @@
 This section talks about configuring the EFI folder for the hardware.
 
 ### Audio
-* For ALC256 on this G7, I use `layout-id = <56>`.
+* For ALC256 on this G7, I use `layout-id = <0D000000>`, it means `13`.
 * Without any modifications, the headphone jack is buggy. External microphones aren't detected and the audio output may randomly stop working or start making weird noises. To permanently fix this issue, please go to [Post-Install](https://github.com/rex-lapis/Dell_G7_7588_OpenCore_Hackintosh#tweaks) for more information.
+#### Fix audio broken after rebooting from Windows into macOS
+* DeviceProperties/Add/PciRoot(0x0)/Pci(0x1F,0x3)
+  * `alctsel = <01000000>`
 
 ### Wi-Fi/Bluetooth
 * The stock Intel AC 9560 now can be worked well with [OpenIntelWireless](https://github.com/OpenIntelWireless), but it is not stable at all. So I replaced it with the Dell DW1560 card.
@@ -85,13 +88,13 @@ This section talks about configuring the EFI folder for the hardware.
 * Integrated Intel UHD Graphics 630 support is handled by WhateverGreen, and configured in the `DeviceProperties` section of `config.plist`.
 The NVIDIA GPU is not supported so it is disabled in SSDT.
 The default BIOS DVMT pre-alloc value of `64MB` is sufficient and does not need to be changed.
-#### Enabling acceleration
+#### Enable acceleration
 * DeviceProperties/Add/PciRoot(0x0)/Pci(0x2,0x0)
-  * `AAPL,ig-platform-id = <3E9B0000>`
-#### Fixing backlight registers on CoffeeLake platform
+  * `AAPL,ig-platform-id = <0900A53E>`
+#### Fix backlight registers on CoffeeLake platform
 * DeviceProperties/Add/PciRoot(0x0)/Pci(0x2,0x0)
   * `enable-backlight-registers-fix = <01000000>`
-#### Enabling external display support
+#### Enable external display support
 * DeviceProperties/Add/PciRoot(0x0)/Pci(0x2,0x0)
   * `agdpmod = <vit9696>`
 
@@ -127,8 +130,8 @@ sudo pmset -a proximitywake 0
 * There is a script file in `Post-Install` folder. Run it after you're already finished installing macOS. It will help to fix the output and input audio when you plug 3.5mm headphone/headset/external speaker in, and disable hibernation for enhancing sleep.
 
 * Disable CFG-Lock (Highly recommend):
-  * Run `CFGUnlock.efi` at OpenCore menu boot screen.
-  * If success, now you can change `AppleXcpmCfgLock` in `Kernel/Quirks` from `True` to `False`. You can verify using `VerifyMsrE2.efi`.
+  * Run `CFGUnlock.efi` at OpenCore menu boot screen. Then, restart the machine.
+  * If success, now you can change `AppleXcpmCfgLock` in `Kernel/Quirks` from `True` to `False`. You can verify using `ControlMsrE2.efi`.
 * Increase Gfx Total Memory:
   * Run `modGRUBShell.efi`
   * When `> grub` show up, type `setup_var 0x8D3 0x03`, hit Enter.
@@ -143,4 +146,3 @@ sudo pmset -a proximitywake 0
 ## Support
 * Support me: 
   - [Paypal](https://www.paypal.me/tekun0lxrd)
-  - Or buy me a black coffee: [Ko-Fi](https://ko-fi.com/rexlapis)
