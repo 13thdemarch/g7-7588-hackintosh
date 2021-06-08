@@ -59,7 +59,7 @@
     - Enabled USB Boot Support: **Enabled**
     - Enable External USB Port: **Enabled**
     - Thunderbolt Security: **No Security**
-    - Thunderbolt Auto Switch: **BIOS Assist**
+    - Thunderbolt Auto Switch: **Native Enumeration**
     - PTT Security: **Disabled**
     - Secure Boot Enable: **Disabled**
     - Intel SGX: **Disabled**
