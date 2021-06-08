@@ -1,12 +1,12 @@
-# Dell G7 Gaming 7588 Hackintosh
+# Dell Inspiron G7 7588 Hackintosh
 
-![Screenshot](screenshot/desktop.png)
+![Screenshot](screenshot.png)
 - macOS: 
-  - Big Sur 11.3.1 ✅
+  - Big Sur 11.4 ✅
   - Catalina 10.15.7 ✅
   - Mojave 10.14.6 ✅
-- Bootloader: OpenCore 0.6.9
-- EFI can be used for both for USB Installer and booting from SSD.
+- Bootloader: OpenCore 0.7.0, Clover 5136
+- EFI can be used for both for installation and booting from SSD.
 
 ## 🔍 System Overview
 * Dell G7 7588
@@ -42,7 +42,7 @@
 | Webcam | ✅ Working |
 | Wi-Fi/Bluetooth | ✅ Working |
 | Airdrop/Handoff | ✅ Working |
-| FileVault 2 | ✅ Working |
+| FileVault 2 (OpenCore recommended)| ✅ Working |
 | SD Card | ❌ Not working |
 | Hibernation | ❌ Not working |
 | NVIDIA GPU/HDMI Port | ❌ Not working |
@@ -59,8 +59,7 @@
     - Enabled USB Boot Support: **Enabled**
     - Enable External USB Port: **Enabled**
     - Thunderbolt Security: **No Security**
-    - Thunderbolt Boot Support: **Enabled**
-    - Thunderbolt Auto Switch: **Native Enumeration**
+    - Thunderbolt Auto Switch: **BIOS Assist**
     - PTT Security: **Disabled**
     - Secure Boot Enable: **Disabled**
     - Intel SGX: **Disabled**
@@ -73,7 +72,7 @@
 This section talks about configuring the EFI folder for the hardware.
 
 ### Audio
-* For ALC256 on this G7, I use `layout-id = <0D000000>`, it means `13`.
+* For ALC256 on this G7, I use `layout-id = <0E000000>`, it means `14`.
 * Without any modifications, the headphone jack is buggy. External microphones aren't detected and the audio output may randomly stop working or start making weird noises. To permanently fix this issue, please go to [Post-Install](https://github.com/rex-lapis/Dell_G7_7588_OpenCore_Hackintosh#tweaks) for more information.
 #### Fix audio broken after rebooting from Windows into macOS
 * DeviceProperties/Add/PciRoot(0x0)/Pci(0x1F,0x3)
@@ -129,13 +128,16 @@ sudo pmset -a proximitywake 0
 ## 🔧 Tweaks
 * There is a script file in `Post-Install` folder. Run it after you're already finished installing macOS. It will help to fix the output and input audio when you plug 3.5mm headphone/headset/external speaker in, and disable hibernation for enhancing sleep.
 
-* Disable CFG-Lock (Highly recommend):
+* Disable CFG-Lock (Highly recommend, you should run it first before installing):
   * Run `CFGUnlock.efi` at OpenCore menu boot screen. Then, restart the machine.
-  * If success, now you can change `AppleXcpmCfgLock` in `Kernel/Quirks` from `True` to `False`. You can verify using `ControlMsrE2.efi`.
+  
+  Now you can boot into macOS installation.
+  
 * Increase Gfx Total Memory:
   * Run `modGRUBShell.efi`
   * When `> grub` show up, type `setup_var 0x8D3 0x03`, hit Enter.
   * The screen will show `setting offset 0x8d3 to 0x03`, that done. Then type `reboot` and hit Enter.
+* Note: For Clover user, you have to run those tools via UEFI Shell. 
 
 ## Credit
 * Apple for macOS.

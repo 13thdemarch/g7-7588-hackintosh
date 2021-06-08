@@ -1,5 +1,15 @@
-Dell G7 7588 OpenCore Changelog
+Dell Inspiron G7 7588 Changelog
 ===============================
+#### v0.7.0
+- Change repository name.
+- Add Clover Bootloader EFI.
+- Add connector patches for user who is using two external monitors.
+- Change audio `layout-id` to `14`, supported subwoofer external speaker.
+- Fix GPI0 code to make trackpad work correctly.
+- Remove define missing devices's name in SSDT, clean PCI in System Information.
+- Remove TB3/Type-C hotplug code in SSDT and IOElectrify kext because of some issues between macOS 11.4 and BIOS.
+- Remove DMAC, PMCR, HPET, TMR, IPIC, RTC in SSDT (not need).
+
 #### v0.6.9
 - Bump to OC 0.6.9.
 - Update lastest kexts.
