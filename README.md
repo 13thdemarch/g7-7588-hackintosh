@@ -1,7 +1,9 @@
 # Dell Inspiron G7 7588 Hackintosh
+## Update 8 Jun: This EFI can run well on macOS Monterey Beta 12.0, but you have to disable Bluetooth kexts! Also add boot argument `-lilubetaall` to boot-arg.
 
 ![Screenshot](screenshot.png)
-- macOS: 
+- macOS:
+  - Monterey 12.0 Beta 🔶 (Currently Bluetooth is not working, both Intel card and Broadcom card)
   - Big Sur 11.4 ✅
   - Catalina 10.15.7 ✅
   - Mojave 10.14.6 ✅
