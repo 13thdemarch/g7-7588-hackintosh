@@ -1,5 +1,5 @@
 # Dell Inspiron G7 7588 Hackintosh
-## Update 8 Jun: This EFI can run well on macOS Monterey Beta 12.0, but you have to disable Bluetooth kexts! Also add boot argument `-lilubetaall` to boot-arg.
+## Update 6 Jul: This EFI can run well on macOS Monterey Beta 12.0 without `-lilubetaall` boot argument.
 
 ![Screenshot](screenshot.png)
 - macOS:
@@ -7,7 +7,7 @@
   - Big Sur 11.4 ✅
   - Catalina 10.15.7 ✅
   - Mojave 10.14.6 ✅
-- Bootloader: OpenCore 0.7.0, Clover 5136
+- Bootloader: OpenCore 0.7.1, Clover 5136
 - EFI can be used for both for installation and booting from SSD.
 
 ## 🔍 System Overview
