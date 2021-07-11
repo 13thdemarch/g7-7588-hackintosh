@@ -1,5 +1,8 @@
 Dell Inspiron G7 7588 Changelog
 ===============================
+#### v0.7.1 + v5137
+- Bump version.
+
 #### v0.7.0
 - Change repository name.
 - Add Clover Bootloader EFI.
