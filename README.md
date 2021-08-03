@@ -19,8 +19,8 @@
   - [USB](#usb)
   - [Wireless, Bluetooth](#wireless-bluetooth)
   - [Sleep, Wake and Hibernation](#sleep-wake-and-hibernation)
-  - [CPU Power Management](cpu-power-management)
-  - [iMessage, Facetime and App Store](imessage-facetime-and-app-store)
+  - [CPU Power Management](#cpu-power-management)
+  - [iMessage, Facetime and App Store](#imessage-facetime-and-app-store)
 - [Finish](#finish)
 
 ## System Overview
