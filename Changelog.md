@@ -1,5 +1,14 @@
 Dell Inspiron G7 7588 Changelog
 ===============================
+#### Kuroba Updates: August 2021
+- Update OpenCore 0.7.2.
+- Update Clover 5138.
+- Update lastest kexts.
+- Add `Device (ALS0)` in SSDT and SMCLightSensor kernel extension to get automatically adjust brightness works in System Preference > Display (this machine has light sensor device).
+- Improve PNLF brightness code to fix Windows compatibility.
+- Update wireless and bluetooth kext folder.
+- Update USB mapping kext folder.
+
 #### v0.7.1 + v5137
 - Bump version.
 
