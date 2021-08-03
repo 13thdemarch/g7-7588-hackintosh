@@ -25,6 +25,7 @@
 
 ## System Overview
 * Dell G7 7588
+
 | Type | Item |
 | ---- | ---- |
 | CPU | Intel Core i7-8750H @ 2.20 GHz, 9M Cache, up to 4.10 GHz
