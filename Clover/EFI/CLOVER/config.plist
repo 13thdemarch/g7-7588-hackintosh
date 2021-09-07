@@ -66,11 +66,11 @@
 				<key>FixHDA</key>
 				<false/>
 				<key>FixHPET</key>
-				<false/>
+				<true/>
 				<key>FixIDE</key>
 				<false/>
 				<key>FixIPIC</key>
-				<false/>
+				<true/>
 				<key>FixIntelGfx</key>
 				<false/>
 				<key>FixLAN</key>
@@ -78,7 +78,7 @@
 				<key>FixMutex</key>
 				<false/>
 				<key>FixRTC</key>
-				<false/>
+				<true/>
 				<key>FixRegions</key>
 				<false/>
 				<key>FixS3D</key>
@@ -90,12 +90,14 @@
 				<key>FixShutdown</key>
 				<false/>
 				<key>FixTMR</key>
-				<false/>
+				<true/>
 				<key>FixUSB</key>
 				<false/>
 				<key>FixWAK</key>
 				<false/>
 			</dict>
+			<key>Name</key>
+			<string>DSDT.aml</string>
 			<key>Patches</key>
 			<array>
 				<dict>
@@ -120,16 +122,6 @@
 				</dict>
 				<dict>
 					<key>Comment</key>
-					<string>Change _PTS to ZPTS(1,S)</string>
-					<key>Disabled</key>
-					<false/>
-					<key>Find</key>
-					<data>X1BUUwk=</data>
-					<key>Replace</key>
-					<data>WlBUUwk=</data>
-				</dict>
-				<dict>
-					<key>Comment</key>
 					<string>Change _WAK to ZWAK(1,N)</string>
 					<key>Disabled</key>
 					<false/>
@@ -137,16 +129,6 @@
 					<data>X1dBSwE=</data>
 					<key>Replace</key>
 					<data>WldBSwE=</data>
-				</dict>
-				<dict>
-					<key>Comment</key>
-					<string>Change _WAK to ZWAK(1,S)</string>
-					<key>Disabled</key>
-					<false/>
-					<key>Find</key>
-					<data>X1dBSwk=</data>
-					<key>Replace</key>
-					<data>WldBSwk=</data>
 				</dict>
 				<dict>
 					<key>Comment</key>
@@ -460,6 +442,8 @@
 		</dict>
 		<key>HDMIInjection</key>
 		<false/>
+		<key>LANInjection</key>
+		<false/>
 		<key>Properties</key>
 		<dict>
 			<key>PciRoot(0x0)/Pci(0x1F,0x3)</key>
@@ -479,7 +463,15 @@
 				<data>CQClPg==</data>
 				<key>agdpmod</key>
 				<string>vit9696</string>
+				<key>backlight-smoother-interval</key>
+				<data>BwAAAA==</data>
+				<key>backlight-smoother-steps</key>
+				<data>IwAAAA==</data>
+				<key>backlight-smoother-threshold</key>
+				<data>LAEAAA==</data>
 				<key>enable-backlight-registers-fix</key>
+				<data>AQAAAA==</data>
+				<key>enable-backlight-smoother</key>
 				<data>AQAAAA==</data>
 				<key>enable-hdmi20</key>
 				<data>AQAAAA==</data>
@@ -490,7 +482,7 @@
 				<key>framebuffer-con1-enable</key>
 				<data>AQAAAA==</data>
 				<key>framebuffer-con2-alldata</key>
-				<data>AgYJAAAEAADHAQAA</data>
+				<data>AwYJAAAEAADHAQAA</data>
 				<key>framebuffer-con2-enable</key>
 				<data>AQAAAA==</data>
 				<key>framebuffer-patch-enable</key>
@@ -504,9 +496,9 @@
 		<key>USB</key>
 		<dict>
 			<key>AddClockID</key>
-			<false/>
+			<true/>
 			<key>FixOwnership</key>
-			<false/>
+			<true/>
 			<key>HighCurrent</key>
 			<false/>
 			<key>Inject</key>
@@ -655,6 +647,10 @@
 		</dict>
 		<key>#TextOnly</key>
 		<false/>
+		<key>Hide</key>
+		<array>
+			<string>Recovery</string>
+		</array>
 		<key>Language</key>
 		<string>en-US:0</string>
 		<key>Mouse</key>
@@ -664,8 +660,12 @@
 		</dict>
 		<key>PlayAsync</key>
 		<false/>
+		<key>ProvideConsoleGop</key>
+		<true/>
 		<key>Scan</key>
 		<dict>
+			<key>Entries</key>
+			<true/>
 			<key>Legacy</key>
 			<false/>
 			<key>Linux</key>
@@ -673,12 +673,10 @@
 			<key>Tool</key>
 			<true/>
 		</dict>
-		<key>ScreenResolution</key>
-		<string>1920x1080</string>
 		<key>ShowOptimus</key>
 		<false/>
 		<key>Theme</key>
-		<string>Circla</string>
+		<string>VNOH</string>
 	</dict>
 	<key>Graphics</key>
 	<dict>
@@ -873,8 +871,6 @@
 		<false/>
 		<key>DellSMBIOSPatch</key>
 		<true/>
-		<key>EightApple</key>
-		<false/>
 		<key>KernelLapic</key>
 		<false/>
 		<key>KernelPm</key>
@@ -1073,8 +1069,42 @@
 		<true/>
 		<key>#Version</key>
 		<string>1.0</string>
+		<key>BiosReleaseDate</key>
+		<string>07/05/2021</string>
+		<key>BiosVendor</key>
+		<string>Apple Inc.</string>
+		<key>BiosVersion</key>
+		<string>MBP151.88Z.F000.B00.2107050205</string>
+		<key>Board-ID</key>
+		<string>Mac-937A206F2EE63C01</string>
+		<key>BoardManufacturer</key>
+		<string>Apple Inc.</string>
+		<key>BoardType</key>
+		<integer>10</integer>
+		<key>BoardVersion</key>
+		<string>MacBookPro15,1</string>
+		<key>ChassisAssetTag</key>
+		<string>Asset Tag#</string>
+		<key>ChassisManufacturer</key>
+		<string>Apple Inc.</string>
+		<key>ChassisType</key>
+		<string>0x9</string>
+		<key>EfiVersion</key>
+		<string>1715.0.57.0.0</string>
+		<key>Family</key>
+		<string>MacBook Pro</string>
+		<key>FirmwareFeatures</key>
+		<string>0xFD8FF426</string>
+		<key>FirmwareFeaturesMask</key>
+		<string>0xFF9FFF3F</string>
+		<key>LocationInChassis</key>
+		<string>Part Component</string>
+		<key>Manufacturer</key>
+		<string>Apple Inc.</string>
 		<key>Mobile</key>
 		<true/>
+		<key>PlatformFeature</key>
+		<string>0x32</string>
 		<key>ProductName</key>
 		<string>MacBookPro15,1</string>
 		<key>Version</key>
