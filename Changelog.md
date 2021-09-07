@@ -7,7 +7,7 @@ Dell Inspiron G7 7588 Changelog
 - Add backlight smoother.
 - Update new CPU power management data for CPUFriendDataProvider.kext, for better battery usage.
 - Remove unnecessary device.
-- *OpenCore Support* now is temporarily closed (Reason: Currently I don't like it, some functions and features are not necessary, and it makes booting into macOS slower).
+- **OpenCore Support** now is temporarily closed (Reason: Currently I don't like it, some functions and features are not necessary, and it makes booting into macOS slower).
 
 #### Akisame Updates: August 2021
 - Update OpenCore 0.7.2.
