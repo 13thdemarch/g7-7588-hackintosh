@@ -1,13 +1,15 @@
 Dell Inspiron G7 7588 Changelog
 ===============================
 #### Akisame Updates: September 2021
+- Update OpenCore 0.7.3 (It's better than I thought)
 - Update Clover 5139.
 - Update lastest kexts.
+- Add Innie.kext to make all PCIe drives appear internal.
 - Set PNLF brightness code back to default for CoffeeLake model (to trigger AppleBacklight.kext).
 - Add backlight smoother.
 - Update new CPU power management data for CPUFriendDataProvider.kext, for better battery usage.
 - Remove unnecessary device.
-- **OpenCore Support** now is temporarily closed (Reason: Currently I don't like it, some functions and features are not necessary, and it makes booting into macOS slower).
+- Fix Intel Bluetooth on macOS Monterey Beta (OpenCore only. See config-intel.plist for more infomation).
 
 #### Akisame Updates: August 2021
 - Update OpenCore 0.7.2.

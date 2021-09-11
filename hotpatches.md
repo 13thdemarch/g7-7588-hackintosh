@@ -13,4 +13,4 @@
 - BTNV, PCI9, LID: Fix correction sleep method.
 - EXT3, PTS, WAK: Extra patches for sleep fix.
 - PS2K: Custom PS2 keyboard.
-- IMEI, MEM2, PPMC, DMAC, PMCR: Missing device
+- IMEI, MEM2, DMAC, PMCR: Missing device

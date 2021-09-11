@@ -1,12 +1,14 @@
 # Dell Inspiron G7 7588 Hackintosh
 
-![Screenshot](screenshot.png)
-- macOS:
-  - Monterey 12.0 Beta 🔶
-  - Big Sur 11.5,1 ✅
+![BigSur](screenshot.png)
+![Monterey](screenshot2.png)
+
+* macOS:
+  - Monterey 12.0 Beta 6 🔶
+  - Big Sur 11.5.2 ✅
   - Catalina 10.15.7 ✅
-- Bootloader: OpenCore 0.7.2, Clover 5138
-- EFI can be used for both for installation and booting from SSD.
+* Bootloader: OpenCore 0.7.3, Clover 5139
+* EFI can be used for both for installation and booting from SSD.
 
 ## Table of Contents
 - [System Overview](#system-overview)
@@ -108,6 +110,11 @@ The default BIOS DVMT pre-alloc value of `64MB` is sufficient and does not need 
   #### Enable external display support
   * DeviceProperties/Add/PciRoot(0x0)/Pci(0x2,0x0)
     * `agdpmod = <vit9696>`
+  #### Customize the behavior of the backlight
+    * `enable-backlight-smoother = <01000000>`
+    * `backlight-smoother-steps = <23000000>`
+    * `backlight-smoother-interval = <07000000>`
+    * `backlight-smoother-threshold = <2C010000>`
 
 ### Audio
 * For ALC256 on this G7, I use `layout-id = <0E000000>`, it means `14`.
@@ -140,7 +147,7 @@ sudo pmset -a proximitywake 0
 * Sleep and wake are improved and very fast now. Also, you can use shortcut key `Fn + Insert` to sleep this machine, likes Windows. For more infomation, please check the [OpenCore 0.6.8](https://github.com/rex-lapis/Hackintosh-Dell-G7-7588-OpenCore/blob/main/Changelog.md#v068) changelog.
 
 ### CPU Power Management
-* CPU power management is done by `CPUFriend.kext` while `CPUFriendDataProvider.kext` defines how it should be done. `CPUFriendDataProvider.kext` is generated for a specific CPU and power setting. The one supplied in this repository was made for the i7-8750H. In case you have another CPU, you can use [one-key-cpufriend](https://github.com/stevezhengshiqi/one-key-cpufriend) to generate your own `CPUFriendDataProvider.kext`.
+* CPU power management is done by `CPUFriend.kext` while `CPUFriendDataProvider.kext` defines how it should be done. `CPUFriendDataProvider.kext` is generated for a specific CPU and power setting. The one supplied in this repository was made for the i7-8750H. In case you have another CPU, you should follow [this guide](https://dortania.github.io/OpenCore-Post-Install/universal/pm.html) to generate your own `CPUFriendDataProvider.kext`.
 
 ### iMessage, Facetime and App Store
 * To use iMessage and other Apple services, you need to generate your own serial numbers. This can be done using [CorpNewt's GenSMBIOS](https://github.com/corpnewt/GenSMBIOS). Make sure model is `MacBookPro15,1`. Then, go [Apple Check Coverage page](https://checkcoverage.apple.com/) to check your generated serial numbers. If the website tells you that the serial number **is not valid**, that is fine. Otherwise, you have to generate a new set.
@@ -154,11 +161,12 @@ sudo pmset -a proximitywake 0
 * If they don't, follow [this in-depth guide](https://dortania.github.io/OpenCore-Post-Install/universal/iservices.html). It goes deeper into ROM, clearing NVRAM, clearing Keychain (missing this step might cause major issues), and much more.
 
 ## Finish
-* There is a script file in `Post-Install` folder. Run it after you're already finished installing macOS. It will help to fix the output and input audio when you plug 3.5mm headphone/headset/external speaker in, and disable hibernation for enhancing sleep.
+* There is a script file in `Post-Install` folder. Move it to `Desktop` and run after you're already finished installing macOS. It will help to fix the output and input audio when you plug 3.5mm headphone/headset/external speaker in, and disable hibernation for enhancing sleep.
 
 ## Credit
 * Apple for macOS.
 * Acidanthera Team for OpenCore and many Kernel Extensions.
+* Clover Team for Clover.
 * Dortania Team for Coffee Lake Laptop guide.
 * Ivs1974 for ComboJack Fix.
 
