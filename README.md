@@ -25,8 +25,13 @@
   - [iMessage, Facetime and App Store](#imessage-facetime-and-app-store)
 - [Finish](#finish)
 
-## System Overview
-* Dell G7 7588
+## Introduction
+
+<details>  
+<summary><strong>System Overview</strong></summary>
+</br>
+
+**Dell G7 7588**
 
 | Type | Item |
 | ---- | ---- |
@@ -36,12 +41,14 @@
 | SSD | Western Digital SN730 256GB NVMe Solid State Drive|
 | HDD | Seagate 1TB 2.5" 5400RPM Internal Hard Drive |
 | Sound | Realtek ALC256/ALC3246 |
-| Wireless, Bluetooth | [Fenvi BCM94360NG WiFi + Bluetooth 4.0 M.2 Card](https://www.aliexpress.com/item/4000631796433.html?spm=a2g0o.store_pc_groupList.8148356.12.1e5c1c8d2nOf4g) |
+| Wireless, Bluetooth | Intel Wireless AC9560 160MHz |
 | Integrated GPU | Intel UHD Graphics 630 (GT2) |
 | Dedicated GPU | Nvidia GTX 1050Ti (disabled) |
 | BIOS Version | 1.16.0 |
 
-## Current Status
+<details>  
+<summary><strong>Current Status</strong></summary>
+</br>
 
 | Feature | Status |
 | ------------- | ------------- |
@@ -70,10 +77,15 @@
 | Fingerprint reader | ❌ Not working |
 | BootCamp | ❌ Not working |
 
+</details>
+
 ## Installation
 
-### BIOS Configuration
-* Recommend you should restore the BIOS setting to BIOS Setting first. Then configure the following things:
+<details>  
+<summary><strong>BIOS Configuration</strong></summary>
+</br>
+
+**Recommend you should restore the BIOS setting to BIOS Setting first. Then configure the following things:**
 
   | Sub-menu | Key: Value | Comment |
   | --- | --- | --- |
@@ -92,10 +104,21 @@
   | Audo OS Recovery Threshold | `Disabled` | |
   | SupportAssist OS Recovery | `Disabled` ||
 
-### Disable CFG-Lock
+</details>
+
+<details>  
+<summary><strong>Disable CFG-Lock</strong></summary>
+</br>
+
 * Before installing, you should disable CFG-Lock because I have already disabled `AppleXcpmCfgLock` (`KernelXCPM` in Clover) key in `config.plist`.
 * Simply just run the `CFGUnlock.efi` tool in OpenCore's GUI, press `Y` and hit Enter. Then reboot the machine. Now you can boot into macOS installation normally.
 * For Clover user, you have to run is via `UEFI Shell` tool at Clover's boot menu.
+
+</details>
+
+<details>
+<summary><strong>config.plist Configuration</strong></summary>
+</br>
 
 ### Graphic Display
 * Integrated Intel UHD Graphics 630 support is handled by WhateverGreen, and configured in the `DeviceProperties` section of `config.plist`.
@@ -123,15 +146,19 @@ The default BIOS DVMT pre-alloc value of `64MB` is sufficient and does not need 
   * DeviceProperties/Add/PciRoot(0x0)/Pci(0x1F,0x3)
     * `alctsel = <01000000>`
 
+</details>
+
+<details>
+<summary><strong>Other Configuration</strong></summary>
+</br>
+
 ### USB
 * From this version, I made a folder about USB ports mapping for somebody who is using Intel or Broadcom wireless card.
 * By default, there is no USB kext in bootloader's kext folder. Make sure you have to pick the correct kext(s) depends on what card you are using and save the `config.plist` file.
 
 ### Wireless, Bluetooth
-* The stock Intel AC 9560 can be worked well with [OpenIntelWireless](https://github.com/OpenIntelWireless), but it's not stable at all. So I replaced it with the Fenvi BCM94360NG card.
-  * This card is native with macOS without any kexts injection, because it uses the chipset from BCM94360CS2 card.
-* If you have Intel or Broadcom card (like DW1560), this EFI is worked well with them. Make sure you have to add wireless and bluetooth kexts correctly.
-* If you have DW1820a card, it is worked too. But trust me, you don't want to use that card! The wifi speed is a bit slower and has problems with 5GHz network. Bluetooth sometimes has issues too.
+* The stock Intel AC 9560 can be worked well with [OpenIntelWireless](https://github.com/OpenIntelWireless).
+* There are some Broadcom cards like DW1560, DW1820A, BCM94360NG, which can use AirDrop well, are compatible with this machine. If you have them, this EFI is worked well. Make sure you have to add wireless and bluetooth kexts correctly (except BCM94360NG, this card is native with macOS, **don't use any kexts!**).
 
 ### Sleep, Wake and Hibernation
 * Hibernation is not supported on a Hackintosh and everything related to it should be completely disabled. Disabling additional features prevents random wakeups while the lid is closed. After every update, these settings should be reapplied manually.
@@ -149,7 +176,12 @@ sudo pmset -a proximitywake 0
 ### CPU Power Management
 * CPU power management is done by `CPUFriend.kext` while `CPUFriendDataProvider.kext` defines how it should be done. `CPUFriendDataProvider.kext` is generated for a specific CPU and power setting. The one supplied in this repository was made for the i7-8750H. In case you have another CPU, you should follow [this guide](https://dortania.github.io/OpenCore-Post-Install/universal/pm.html) to generate your own `CPUFriendDataProvider.kext`.
 
-### iMessage, Facetime and App Store
+</details>
+
+<details>
+<summary><strong>iServices</strong></summary>
+</br>
+
 * To use iMessage and other Apple services, you need to generate your own serial numbers. This can be done using [CorpNewt's GenSMBIOS](https://github.com/corpnewt/GenSMBIOS). Make sure model is `MacBookPro15,1`. Then, go [Apple Check Coverage page](https://checkcoverage.apple.com/) to check your generated serial numbers. If the website tells you that the serial number **is not valid**, that is fine. Otherwise, you have to generate a new set.
 
 * Next you will have to copy the following values to your `config.plist`:
@@ -160,8 +192,15 @@ sudo pmset -a proximitywake 0
 
 * If they don't, follow [this in-depth guide](https://dortania.github.io/OpenCore-Post-Install/universal/iservices.html). It goes deeper into ROM, clearing NVRAM, clearing Keychain (missing this step might cause major issues), and much more.
 
-## Finish
+</details>
+
+<details>
+<summary><strong>Finish</strong></summary>
+</br>
+
 * There is a script file in `Post-Install` folder. Move it to `Desktop` and run after you're already finished installing macOS. It will help to fix the output and input audio when you plug 3.5mm headphone/headset/external speaker in, and disable hibernation for enhancing sleep.
+
+</details>
 
 ## Credit
 * Apple for macOS.
