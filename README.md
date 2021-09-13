@@ -44,6 +44,7 @@ macOS Monterey
 
 <details>  
 <summary><strong>Current Status</strong></summary>
+</br>
 
 | Feature | Status |
 | ------------- | ------------- |
