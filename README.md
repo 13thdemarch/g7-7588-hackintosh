@@ -1,7 +1,9 @@
 # Dell Inspiron G7 7588 Hackintosh
 
 ![BigSur](screenshot.png)
+*macOS Big Sur*
 ![Monterey](screenshot2.png)
+*macOS Monterey Beta*
 
 * macOS:
   - Monterey 12.0 Beta 6 🔶
@@ -10,26 +12,10 @@
 * Bootloader: OpenCore 0.7.3, Clover 5139
 * EFI can be used for both for installation and booting from SSD.
 
-## Table of Contents
-- [System Overview](#system-overview)
-- [Current Status](#current-status)
-- [Installation](#installation)
-  - [BIOS Configuration](#bios-configuration)
-  - [Disable CFG-Lock](#disable-cfg-lock)
-  - [Graphic Display](#graphic-display)
-  - [Audio](#audio)
-  - [USB](#usb)
-  - [Wireless, Bluetooth](#wireless-bluetooth)
-  - [Sleep, Wake and Hibernation](#sleep-wake-and-hibernation)
-  - [CPU Power Management](#cpu-power-management)
-  - [iMessage, Facetime and App Store](#imessage-facetime-and-app-store)
-- [Finish](#finish)
-
 ## Introduction
 
 <details>  
 <summary><strong>System Overview</strong></summary>
-</br>
 
 **Dell G7 7588**
 
@@ -50,7 +36,6 @@
 
 <details>  
 <summary><strong>Current Status</strong></summary>
-</br>
 
 | Feature | Status |
 | ------------- | ------------- |
@@ -85,7 +70,6 @@
 
 <details>  
 <summary><strong>BIOS Configuration</strong></summary>
-</br>
 
 **Recommend you should restore the BIOS setting to BIOS Setting first. Then configure the following things:**
 
@@ -120,7 +104,6 @@
 
 <details>
 <summary><strong>config.plist Configuration</strong></summary>
-</br>
 
 ### Graphic Display
 * Integrated Intel UHD Graphics 630 support is handled by WhateverGreen, and configured in the `DeviceProperties` section of `config.plist`.
@@ -152,7 +135,6 @@ The default BIOS DVMT pre-alloc value of `64MB` is sufficient and does not need 
 
 <details>
 <summary><strong>Other Configuration</strong></summary>
-</br>
 
 ### USB
 * From this version, I made a folder about USB ports mapping for somebody who is using Intel or Broadcom wireless card.
@@ -182,7 +164,6 @@ sudo pmset -a proximitywake 0
 
 <details>
 <summary><strong>iServices</strong></summary>
-</br>
 
 * To use iMessage and other Apple services, you need to generate your own serial numbers. This can be done using [CorpNewt's GenSMBIOS](https://github.com/corpnewt/GenSMBIOS). Make sure model is `MacBookPro15,1`. Then, go [Apple Check Coverage page](https://checkcoverage.apple.com/) to check your generated serial numbers. If the website tells you that the serial number **is not valid**, that is fine. Otherwise, you have to generate a new set.
 
@@ -198,7 +179,6 @@ sudo pmset -a proximitywake 0
 
 <details>
 <summary><strong>Finish</strong></summary>
-</br>
 
 * There is a script file in `Post-Install` folder. Move it to `Desktop` and run after you're already finished installing macOS. It will help to fix the output and input audio when you plug 3.5mm headphone/headset/external speaker in, and disable hibernation for enhancing sleep.
 
