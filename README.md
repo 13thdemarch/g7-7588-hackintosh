@@ -46,6 +46,8 @@
 | Dedicated GPU | Nvidia GTX 1050Ti (disabled) |
 | BIOS Version | 1.16.0 |
 
+</details>
+
 <details>  
 <summary><strong>Current Status</strong></summary>
 </br>
