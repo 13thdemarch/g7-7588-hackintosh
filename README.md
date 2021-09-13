@@ -1,9 +1,16 @@
 # Dell Inspiron G7 7588 Hackintosh
 
 ![BigSur](screenshot.png)
-*macOS Big Sur*
+
+<p align = "center">
+macOS Big Sur
+</p>
+
 ![Monterey](screenshot2.png)
-*macOS Monterey Beta*
+
+<p align = "center">
+macOS Monterey
+</p>
 
 * macOS:
   - Monterey 12.0 Beta 6 🔶
@@ -16,6 +23,7 @@
 
 <details>  
 <summary><strong>System Overview</strong></summary>
+</br>
 
 **Dell G7 7588**
 
@@ -70,6 +78,7 @@
 
 <details>  
 <summary><strong>BIOS Configuration</strong></summary>
+</br>
 
 **Recommend you should restore the BIOS setting to BIOS Setting first. Then configure the following things:**
 
