@@ -7,10 +7,10 @@ macOS Big Sur
 </p>
 
 * macOS:
-  - Monterey 12.0 Beta 6 🔶
-  - Big Sur 11.5.2 ✅
+  - Monterey 12.0 Beta 8 🔶
+  - Big Sur 11.6 ✅
   - Catalina 10.15.7 ✅
-* Bootloader: OpenCore 0.7.3, Clover 5139
+* Bootloader: OpenCore 0.7.4, Clover 5140
 * EFI can be used for both for installation and booting from SSD.
 
 ## Introduction
