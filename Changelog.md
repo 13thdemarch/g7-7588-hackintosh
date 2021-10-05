@@ -1,5 +1,18 @@
 Dell Inspiron G7 7588 Changelog
 ===============================
+#### Akisame Updates: October 2021
+- Start supporting Intel Wireless card system only.
+- Update OC 0.7.4.
+- Update Clover 5140.
+- Update latest kexts.
+- Remove ComboJack method, replace with ALCPlugFix-Swift.
+- Remove Innie kext (not necessary).
+- Fix typo `SSDT-GPI0.aml`.
+- Add CodecCommander kext and SSDT-HDEF.aml to be paired with ALCPlugFix.
+- Add `acpi-wake-type` property to wake from USB keyboard correctly.
+- Add `alc-verbs` property to enable ALC Verb support.
+- Add HibernationFixup kext to improve hibernation (mode 3).
+
 #### Akisame Updates: September 2021
 - Update OpenCore 0.7.3 (It's better than I thought)
 - Update Clover 5139.

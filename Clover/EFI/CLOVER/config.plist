@@ -66,11 +66,11 @@
 				<key>FixHDA</key>
 				<false/>
 				<key>FixHPET</key>
-				<true/>
+				<false/>
 				<key>FixIDE</key>
 				<false/>
 				<key>FixIPIC</key>
-				<true/>
+				<false/>
 				<key>FixIntelGfx</key>
 				<false/>
 				<key>FixLAN</key>
@@ -78,7 +78,7 @@
 				<key>FixMutex</key>
 				<false/>
 				<key>FixRTC</key>
-				<true/>
+				<false/>
 				<key>FixRegions</key>
 				<false/>
 				<key>FixS3D</key>
@@ -90,7 +90,7 @@
 				<key>FixShutdown</key>
 				<false/>
 				<key>FixTMR</key>
-				<true/>
+				<false/>
 				<key>FixUSB</key>
 				<false/>
 				<key>FixWAK</key>
@@ -446,10 +446,17 @@
 		<false/>
 		<key>Properties</key>
 		<dict>
+			<key>PciRoot(0x0)/Pci(0x14,0x0)</key>
+			<dict>
+				<key>acpi-wake-type</key>
+				<data>AQ==</data>
+			</dict>
 			<key>PciRoot(0x0)/Pci(0x1F,0x3)</key>
 			<dict>
 				<key>alc-delay</key>
 				<integer>1000</integer>
+				<key>alc-verbs</key>
+				<data>AQAAAA==</data>
 				<key>alctsel</key>
 				<data>AQAAAA==</data>
 				<key>hda-gfx</key>
@@ -947,6 +954,8 @@
 		<string>0x28</string>
 		<key>CsrActiveConfig</key>
 		<string>0x00</string>
+		<key>MLB</key>
+		<string>C02921207CDJP4FUE</string>
 		<key>ROM</key>
 		<string>UseMacAddr0</string>
 	</dict>
