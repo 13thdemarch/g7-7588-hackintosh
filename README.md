@@ -131,7 +131,7 @@ The default BIOS DVMT pre-alloc value of `64MB` is sufficient and does not need 
 ### Audio
 * For ALC256 on this G7, I use `layout-id = <0E000000>`, it means `14`.
 * Without any modifications, the headphone jack is buggy. External microphones aren't detected and the audio output may randomly stop working or start making weird noises.
-* Start from this version, I change to use **ALCPlugFix-Swift** method, instead of old method `ComboJack`. It gives better sound experience and performance when using the headset/headphone. Thanks to [Juan-VC](https://github.com/Juan-VC/Hackintosh-macOS-Dell-G7-7588/blob/main/codec_dump.txt) about his ALC256 codec_dump and [black-dragon74](https://github.com/black-dragon74/ALCPlugFix-Swift) about his ALCPlugFix-Swift method. To permanently fix this issue, please go to [Post-Install](https://github.com/akisame-reiu/Dell_G7_7588_OpenCore_Hackintosh#post_install) for more information.
+* Start from this version, I change to use **ALCPlugFix-Swift** method, instead of old method `ComboJack`. It gives better sound experience and performance when using the headset/headphone. Thanks to [Juan-VC](https://github.com/Juan-VC/Hackintosh-macOS-Dell-G7-7588/blob/main/codec_dump.txt) about his ALC256 codec_dump and [black-dragon74](https://github.com/black-dragon74/ALCPlugFix-Swift) about his ALCPlugFix-Swift method. To permanently fix this issue, please go to [Post-Install](https://github.com/akisame-reiu/Dell-Inspiron-G7-7588-Hackintosh#post-installation) for more information.
   #### Fix audio broken after rebooting from Windows into macOS
   * DeviceProperties/Add/PciRoot(0x0)/Pci(0x1F,0x3)
     * `alctsel = <01000000>`
