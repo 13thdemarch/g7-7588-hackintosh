@@ -107,7 +107,7 @@ macOS Big Sur
 </details>
 
 <details>
-<summary><strong>config.plist Configuration</strong></summary>
+<summary><strong>Mainly Configuration</strong></summary>
 
 ### Graphic Display
 * Integrated Intel UHD Graphics 630 support is handled by WhateverGreen, and configured in the `DeviceProperties` section of `config.plist`.
