@@ -1,16 +1,14 @@
 #### Dell G7 7588 hotpatches list:
 
-- EC: Fake embedded controller.
-- PR00: CPU power management.
-- USBX: Fix USB power for Skylake and newer.
-- PNLF: Fix brightness control.
-- ALSO: Enable light sensor.
-- ACOS, ASCE: Special patch for Dell machine, fix brightness keys.
-- GPHD: Fix GPI0 trackpad.
-- NHG1: Disable dGPU.
-- MCHC, BUS0: Fix SMBus.
-- GPRW: Fix sleep.
-- BTNV, PCI9, LID: Fix correction sleep method.
-- EXT3, PTS, WAK: Extra patches for sleep fix.
-- PS2K: Custom PS2 keyboard.
-- IMEI, MEM2, DMAC, PMCR: Missing device
+- ALS0: Enable light sensor.
+- CPUPM: CPU power management.
+- DDGPU: Disable dGPU.
+- DELL: Special patches for Dell machine.
+- EC-USBX: Fake embedded controller and fix USB power properties.
+- GPI0: Enable I2C touchpad.
+- GPRW: Fix instant wake.
+- HDEF: Add ALC256 Pin/Node ID for CodecCommander kext, to be paired with ALCPlugFix-Swift.
+- PCID: Add missing PCI devices path.
+- PNLFCFL: Fix brightness control for CoffeeLake model.
+- PS2K: Modify PS2 keyboard. Disable Fn+B/S for brightness up/down.
+- PTSWAK: Fix sleep/wake.

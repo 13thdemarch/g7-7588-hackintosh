@@ -3,10 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>#DisableDrivers</key>
-	<array>
-		<string>CsmVideoDxe</string>
-		<string>VBoxExt4</string>
-	</array>
+	<array/>
 	<key>ACPI</key>
 	<dict>
 		<key>#PatchAPIC</key>
@@ -16,17 +13,15 @@
 		<key>#ResetValue</key>
 		<string>0xFE</string>
 		<key>#SortedOrder</key>
-		<array>
-			<string>SSDT-3.aml</string>
-			<string>SSDT-1.aml</string>
-			<string>SSDT-2.aml</string>
-		</array>
+		<array/>
 		<key>#smartUPS</key>
 		<false/>
 		<key>AutoMerge</key>
 		<false/>
 		<key>DSDT</key>
 		<dict>
+			<key>#PNLF_UID</key>
+			<string></string>
 			<key>#Rtc8Allowed</key>
 			<false/>
 			<key>#SuspendOverride</key>
@@ -219,14 +214,16 @@
 	</dict>
 	<key>Boot</key>
 	<dict>
-		<key>#Arguments</key>
-		<string>slide=0 darkwake=0</string>
 		<key>#DefaultLoader</key>
 		<string>boot.efi</string>
+		<key>#Legacy</key>
+		<string>PBR</string>
 		<key>#LegacyBiosDefaultEntry</key>
 		<integer>0</integer>
 		<key>#XMPDetection</key>
 		<string>-1</string>
+		<key>Arguments</key>
+		<string></string>
 		<key>CustomLogo</key>
 		<false/>
 		<key>Debug</key>
@@ -238,7 +235,7 @@
 		<key>NeverDoRecovery</key>
 		<false/>
 		<key>NeverHibernate</key>
-		<true/>
+		<false/>
 		<key>NoEarlyProgress</key>
 		<false/>
 		<key>RtcHibernateAware</key>
@@ -258,6 +255,10 @@
 	<dict>
 		<key>#DefaultBackgroundColor</key>
 		<string>0xF0F0F0</string>
+		<key>#EFILoginHiDPI</key>
+		<integer>1</integer>
+		<key>#UIScale</key>
+		<integer>1</integer>
 	</dict>
 	<key>CPU</key>
 	<dict>
@@ -310,131 +311,15 @@
 		<key>#IntelMaxValue</key>
 		<string>0x710</string>
 		<key>#NoDefaultProperties</key>
-		<true/>
-		<key>#Properties</key>
-		<dict>
-			<key>PciRoot(0x0)/Pci(0x14,0x0)</key>
-			<dict>
-				<key>#Comment</key>
-				<string>This is USB3.0</string>
-				<key>AAPL,clock-id</key>
-				<data>AA==</data>
-				<key>AAPL,current-available</key>
-				<data>sAQ=</data>
-				<key>AAPL,current-extra</key>
-				<data>vAI=</data>
-				<key>AAPL,current-in-sleep</key>
-				<data>6AM=</data>
-				<key>built-in</key>
-				<data>AA==</data>
-				<key>device_type</key>
-				<string>XHCI</string>
-			</dict>
-			<key>PciRoot(0x0)/Pci(0x19,0x0)</key>
-			<dict>
-				<key>built-in</key>
-				<data>AQ==</data>
-			</dict>
-			<key>PciRoot(0x0)/Pci(0x1a,0x0)</key>
-			<dict>
-				<key>AAPL,clock-id</key>
-				<data>AQ==</data>
-				<key>AAPL,current-available</key>
-				<data>sAQ=</data>
-				<key>AAPL,current-extra</key>
-				<data>vAI=</data>
-				<key>AAPL,current-in-sleep</key>
-				<data>6AM=</data>
-				<key>built-in</key>
-				<data>AA==</data>
-				<key>device_type</key>
-				<string>EHCI</string>
-			</dict>
-			<key>PciRoot(0x0)/Pci(0x1b,0x0)</key>
-			<dict>
-				<key>hda-gfx</key>
-				<string>onboard-1</string>
-			</dict>
-			<key>PciRoot(0x0)/Pci(0x1c,0x1)/Pci(0x0,0x0)</key>
-			<dict>
-				<key>device_type</key>
-				<string>Airport</string>
-				<key>model</key>
-				<string>Apple WiFi card</string>
-				<key>name</key>
-				<string>AirPort Extreme</string>
-				<key>subsystem-vendor-id</key>
-				<data>axAAAA==</data>
-			</dict>
-			<key>PciRoot(0x0)/Pci(0x1c,0x5)/Pci(0x0,0x0)</key>
-			<dict>
-				<key>compatible</key>
-				<string>pci14e4,16bc</string>
-				<key>device_type</key>
-				<string>Media controller</string>
-				<key>model</key>
-				<string>O2 Micro SD card reader</string>
-				<key>name</key>
-				<string>AirPort Extreme</string>
-				<key>subsystem-vendor-id</key>
-				<data>axAAAA==</data>
-			</dict>
-			<key>PciRoot(0x0)/Pci(0x1d,0x0)</key>
-			<dict>
-				<key>AAPL,clock-id</key>
-				<data>Ag==</data>
-				<key>AAPL,current-available</key>
-				<data>sAQ=</data>
-				<key>AAPL,current-extra</key>
-				<data>vAI=</data>
-				<key>AAPL,current-in-sleep</key>
-				<data>6AM=</data>
-				<key>built-in</key>
-				<data>AA==</data>
-				<key>device_type</key>
-				<string>EHCI</string>
-			</dict>
-			<key>PciRoot(0x0)/Pci(0x2,0x0)</key>
-			<dict>
-				<key>#AAPL00,override-no-connect</key>
-				<data>AP///////wANr2kUAAAAABYWAQSgHxF4AtFFm1lXjisjUFQAAAABAQEBAQEBAQEBAQEBAQEBEhtWclAADDAQZCYANa4QAAAaDBJWclAADDAQIiYANa4QAAAaAAAA/gA3SlJUOYAxNDBCR0UKAAAAAAAAQTGUAAAAAAEBCiAgAMU=</data>
-				<key>@0,backlight-control</key>
-				<data>AQAAAA==</data>
-				<key>AAPL,HasLid</key>
-				<data>AQAAAA==</data>
-				<key>AAPL,HasPanel</key>
-				<data>AQAAAA==</data>
-				<key>AAPL,backlight-control</key>
-				<data>AQAAAA==</data>
-				<key>AAPL,ig-platform-id</key>
-				<data>AwBmAQ==</data>
-				<key>class-code</key>
-				<data>AAADAA==</data>
-				<key>device-id</key>
-				<data>ZgEAAA==</data>
-				<key>graphic-options</key>
-				<data>DAAAAA==</data>
-				<key>model</key>
-				<string>Intel HD Graphics 4000</string>
-				<key>subsystem-vendor-id</key>
-				<data>axAAAA==</data>
-				<key>vendor-id</key>
-				<data>hoAAAA==</data>
-			</dict>
-			<key>SecondaryGPU</key>
-			<dict>
-				<key>device-id</key>
-				<data>/////w==</data>
-			</dict>
-		</dict>
+		<false/>
 		<key>#SetIntelBacklight</key>
 		<false/>
 		<key>#SetIntelMaxBacklight</key>
-		<true/>
+		<false/>
 		<key>Audio</key>
 		<dict>
 			<key>#Inject</key>
-			<string>12</string>
+			<string></string>
 			<key>AFGLowPowerState</key>
 			<true/>
 			<key>ResetHDA</key>
@@ -459,8 +344,6 @@
 				<data>AQAAAA==</data>
 				<key>alctsel</key>
 				<data>AQAAAA==</data>
-				<key>hda-gfx</key>
-				<string>onboard-1</string>
 				<key>layout-id</key>
 				<data>DgAAAA==</data>
 			</dict>
@@ -470,34 +353,10 @@
 				<data>CQClPg==</data>
 				<key>agdpmod</key>
 				<string>vit9696</string>
-				<key>backlight-smoother-interval</key>
-				<data>BwAAAA==</data>
-				<key>backlight-smoother-steps</key>
-				<data>IwAAAA==</data>
-				<key>backlight-smoother-threshold</key>
-				<data>LAEAAA==</data>
 				<key>enable-backlight-registers-fix</key>
-				<data>AQAAAA==</data>
-				<key>enable-backlight-smoother</key>
-				<data>AQAAAA==</data>
-				<key>enable-hdmi20</key>
 				<data>AQAAAA==</data>
 				<key>force-online</key>
 				<data>AQAAAA==</data>
-				<key>framebuffer-con1-alldata</key>
-				<data>AQUJAAAEAADHAQAA</data>
-				<key>framebuffer-con1-enable</key>
-				<data>AQAAAA==</data>
-				<key>framebuffer-con2-alldata</key>
-				<data>AwYJAAAEAADHAQAA</data>
-				<key>framebuffer-con2-enable</key>
-				<data>AQAAAA==</data>
-				<key>framebuffer-patch-enable</key>
-				<data>AQAAAA==</data>
-				<key>framebuffer-portcount</key>
-				<data>AwAAAA==</data>
-				<key>hda-gfx</key>
-				<string>onboard-1</string>
 			</dict>
 		</dict>
 		<key>USB</key>
@@ -623,6 +482,8 @@
 		</dict>
 		<key>#CustomIcons</key>
 		<false/>
+		<key>#EmbeddedThemeType</key>
+		<string>Daytime</string>
 		<key>#Hide</key>
 		<array>
 			<string>Windows</string>
@@ -643,30 +504,17 @@
 			<key>Speed</key>
 			<integer>2</integer>
 		</dict>
-		<key>#Scan</key>
-		<dict>
-			<key>Entries</key>
-			<true/>
-			<key>Legacy</key>
-			<false/>
-			<key>Tool</key>
-			<true/>
-		</dict>
+		<key>#PlayAsync</key>
+		<false/>
 		<key>#TextOnly</key>
 		<false/>
-		<key>Hide</key>
-		<array>
-			<string>Recovery</string>
-		</array>
-		<key>Language</key>
-		<string>en-US:0</string>
+		<key>#Timezone</key>
+		<integer>0</integer>
 		<key>Mouse</key>
 		<dict>
 			<key>Enabled</key>
 			<false/>
 		</dict>
-		<key>PlayAsync</key>
-		<false/>
 		<key>ProvideConsoleGop</key>
 		<true/>
 		<key>Scan</key>
@@ -675,11 +523,11 @@
 			<true/>
 			<key>Legacy</key>
 			<false/>
-			<key>Linux</key>
-			<false/>
 			<key>Tool</key>
 			<true/>
 		</dict>
+		<key>ScreenResolution</key>
+		<string>1920x1080</string>
 		<key>ShowOptimus</key>
 		<false/>
 		<key>Theme</key>
@@ -878,6 +726,8 @@
 		<false/>
 		<key>DellSMBIOSPatch</key>
 		<true/>
+		<key>EightApple</key>
+		<false/>
 		<key>KernelLapic</key>
 		<false/>
 		<key>KernelPm</key>
@@ -900,7 +750,7 @@
 		<key>DisableIoMapper</key>
 		<false/>
 		<key>DisableLinkeditJettison</key>
-		<true/>
+		<false/>
 		<key>DisableSingleUser</key>
 		<false/>
 		<key>DisableVariableWrite</key>
@@ -954,136 +804,42 @@
 		<string>0x28</string>
 		<key>CsrActiveConfig</key>
 		<string>0x00</string>
-		<key>MLB</key>
-		<string>C02921207CDJP4FUE</string>
 		<key>ROM</key>
 		<string>UseMacAddr0</string>
 	</dict>
 	<key>SMBIOS</key>
 	<dict>
-		<key>#BiosReleaseDate</key>
-		<string>05/03/10</string>
-		<key>#BiosVendor</key>
-		<string>Apple Inc.</string>
-		<key>#BiosVersion</key>
-		<string>IM131.88Z.F000.B00.1907241303</string>
-		<key>#Board-ID</key>
-		<string>Mac-FC02E91DDD3FA6A4</string>
-		<key>#BoardManufacturer</key>
-		<string>Apple Inc.</string>
-		<key>#BoardSerialNumber</key>
-		<string>C0225060SAMF651AX</string>
-		<key>#BoardType</key>
-		<integer>10</integer>
-		<key>#BoardVersion</key>
-		<string>Proto1</string>
-		<key>#ChassisAssetTag</key>
-		<string>Desktop</string>
-		<key>#ChassisManufacturer</key>
-		<string>Apple Inc.</string>
-		<key>#ChassisType</key>
-		<integer>16</integer>
-		<key>#EfiVersion</key>
-		<string>288.0.0.0.0</string>
-		<key>#Family</key>
-		<string>iMac</string>
-		<key>#FirmwareFeatures</key>
-		<string>0xC0001403</string>
-		<key>#FirmwareFeaturesMask</key>
-		<string>0xFFFFFFFF</string>
-		<key>#LocationInChassis</key>
-		<string>MLB</string>
+		<key>#ExtendedFirmwareFeatures</key>
+		<string>0x8FE001403</string>
+		<key>#ExtendedFirmwareFeaturesMask</key>
+		<string>0xFFFFFFFFFF</string>
 		<key>#Memory</key>
 		<dict>
 			<key>Channels</key>
 			<integer>2</integer>
 			<key>Modules</key>
-			<array>
-				<dict>
-					<key>Frequency</key>
-					<integer>1333</integer>
-					<key>Part</key>
-					<string>C0001403</string>
-					<key>Serial</key>
-					<string>00001001</string>
-					<key>Size</key>
-					<integer>4096</integer>
-					<key>Slot</key>
-					<integer>0</integer>
-					<key>Type</key>
-					<string>DDR3</string>
-					<key>Vendor</key>
-					<string>Kingston</string>
-				</dict>
-				<dict>
-					<key>Frequency</key>
-					<integer>1333</integer>
-					<key>Part</key>
-					<string>C0001404</string>
-					<key>Serial</key>
-					<string>00001002</string>
-					<key>Size</key>
-					<integer>4096</integer>
-					<key>Slot</key>
-					<integer>2</integer>
-					<key>Type</key>
-					<string>DDR3</string>
-					<key>Vendor</key>
-					<string>Kingston</string>
-				</dict>
-			</array>
+			<array/>
 			<key>SlotCount</key>
 			<integer>4</integer>
 		</dict>
 		<key>#MemoryRank</key>
 		<integer>2</integer>
-		<key>#Mobile</key>
-		<true/>
 		<key>#NoRomInfo</key>
 		<true/>
 		<key>#PlatformFeature</key>
 		<string>0x00</string>
-		<key>#ProductName</key>
-		<string>iMac13,2</string>
-		<key>#SerialNumber</key>
-		<string>C02JBSAMDNCW</string>
 		<key>#Slots</key>
-		<array>
-			<dict>
-				<key>Device</key>
-				<string>ATI</string>
-				<key>ID</key>
-				<integer>1</integer>
-				<key>Name</key>
-				<string>PCIe Slot 0</string>
-				<key>Type</key>
-				<integer>16</integer>
-			</dict>
-			<dict>
-				<key>Device</key>
-				<string>WIFI</string>
-				<key>ID</key>
-				<integer>0</integer>
-				<key>Name</key>
-				<string>Airport</string>
-				<key>Type</key>
-				<integer>1</integer>
-			</dict>
-		</array>
-		<key>#SmUUID</key>
-		<string>00000000-0000-1000-8000-010203040506</string>
+		<array/>
 		<key>#SmbiosVersion</key>
 		<string>0x0300</string>
 		<key>#Trust</key>
 		<true/>
-		<key>#Version</key>
-		<string>1.0</string>
 		<key>BiosReleaseDate</key>
-		<string>07/05/2021</string>
+		<string>10/03/2021</string>
 		<key>BiosVendor</key>
 		<string>Apple Inc.</string>
 		<key>BiosVersion</key>
-		<string>MBP151.88Z.F000.B00.2107050205</string>
+		<string>MBP151.88Z.F000.B00.2110032010</string>
 		<key>Board-ID</key>
 		<string>Mac-937A206F2EE63C01</string>
 		<key>BoardManufacturer</key>
@@ -1099,7 +855,11 @@
 		<key>ChassisType</key>
 		<string>0x9</string>
 		<key>EfiVersion</key>
-		<string>1715.0.57.0.0</string>
+		<string>1715.40.15.0.0</string>
+		<key>ExtendedFirmwareFeatures</key>
+		<string>0x00000008FD8FF426</string>
+		<key>ExtendedFirmwareFeaturesMask</key>
+		<string>0x00000008FF9FFF3F</string>
 		<key>Family</key>
 		<string>MacBook Pro</string>
 		<key>FirmwareFeatures</key>

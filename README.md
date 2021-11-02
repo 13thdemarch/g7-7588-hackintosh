@@ -1,16 +1,15 @@
 # Dell Inspiron G7 7588 Hackintosh
 
-![BigSur](screenshot.png)
+![Monterey](screenshot.png)
 
 <p align = "center">
 macOS Big Sur
 </p>
 
 * macOS:
-  - Monterey 12.0 Beta 8 🔶
+  - Monterey 12.0.1 ✅
   - Big Sur 11.6 ✅
-  - Catalina 10.15.7 ✅
-* Bootloader: OpenCore 0.7.4, Clover 5140
+* Bootloader: OpenCore 0.7.5, Clover 5141.
 * EFI can be used for both for installation and booting from SSD.
 
 ## Introduction
@@ -32,7 +31,7 @@ macOS Big Sur
 | Wireless, Bluetooth | Intel Wireless AC9560 160MHz |
 | Integrated GPU | Intel UHD Graphics 630 (GT2) |
 | Dedicated GPU | Nvidia GTX 1050Ti (disabled) |
-| BIOS Version | 1.16.0 |
+| BIOS Version | 1.17.0 |
 
 </details>
 
@@ -60,8 +59,8 @@ macOS Big Sur
 | Wi-Fi/Bluetooth | ✅ Working |
 | Airdrop/Handoff | 🔶 Airdrop doesn't work with Intel card. Handoff works correctly. |
 | FileVault 2 (OpenCore recommended)| ✅ Working |
+| Hibernation | ✅ Working |
 | SD Card | ❌ Not working |
-| Hibernation | ❌ Not working |
 | NVIDIA GPU/HDMI Port | ❌ Not working |
 | DRM | ❌ Not working |
 | Fingerprint reader | ❌ Not working |
@@ -86,13 +85,13 @@ macOS Big Sur
   | Enable External USB Port | `Enabled` | |
   | Thunderbolt Security | `Disabled` | |
   | Thunderbolt Auto Switch | `Native Enumeration` | |
-  | PTT Security | `Enabled` | You can enable it for running Windows 11 |
+  | PTT Security | `Disabled` | You can enable it if you want to run Windows 11 |
   | Secure Boot Enable | `Disabled` | |
   | Intel SGX | `Disabled` | |
   | VT for Direct I/O: | `Disabled` | |
-  | Wake on USB | `Enabled` | Wake from keyboard works correctly |
+  | Wake on USB | `Enabled` | Wake from keyboard works correctly | |
   | Audo OS Recovery Threshold | `Disabled` | |
-  | SupportAssist OS Recovery | `Disabled` ||
+  | SupportAssist OS Recovery | `Disabled` | |
 
 </details>
 
@@ -122,11 +121,6 @@ The default BIOS DVMT pre-alloc value of `64MB` is sufficient and does not need 
   #### Enable external display support
   * DeviceProperties/Add/PciRoot(0x0)/Pci(0x2,0x0)
     * `agdpmod = <vit9696>`
-  #### Customize the behavior of the backlight
-    * `enable-backlight-smoother = <01000000>`
-    * `backlight-smoother-steps = <23000000>`
-    * `backlight-smoother-interval = <07000000>`
-    * `backlight-smoother-threshold = <2C010000>`
 
 ### Audio
 * For ALC256 on this G7, I use `layout-id = <0E000000>`, it means `14`.
@@ -145,7 +139,7 @@ The default BIOS DVMT pre-alloc value of `64MB` is sufficient and does not need 
 <summary><strong>Other Configuration</strong></summary>
 
 ### USB
-* From this version, I support the USB map for Intel Wireless card only. If you're using Broadcom card, please check the folder with included the USB map kext for Broadcom card.
+* There is a folder which includes USB mapping kext for both Intel and Broadcom card. By default, I use USB mapping kext for Intel card in EFI folders.
 * The G7 7588 DSDT table has a few incorrect USB properties, but we can inject the correct properties via the kext which I've already mapped.
 
 | Name | Port | Type     | Visible | Description |
@@ -156,7 +150,7 @@ The default BIOS DVMT pre-alloc value of `64MB` is sufficient and does not need 
 | HS05 | 5    | Internal | Yes     | Integrated Webcam |
 | HS07 | 7    | Internal | No      | Broadcom card's Bluetooth, Broadcom kext only |
 | HS09 | 9    | Internal | Yes     | Goodix Fingerprint |
-| HS14 | 14   | Internal | Yes     | Intel card's Bluetooth |
+| HS14 | 14   | Internal | Yes     | Intel card's Bluetooth, Intel kext only |
 | SS01 | 17   | Type 3   | Yes     | |
 | SS02 | 18   | Type 3   | Yes     | |
 | SS03 | 19   | Type 3   | Yes     | |
@@ -164,11 +158,11 @@ The default BIOS DVMT pre-alloc value of `64MB` is sufficient and does not need 
 ### Wireless, Bluetooth
 * The stock Intel AC 9560 can be worked well with [OpenIntelWireless](https://github.com/OpenIntelWireless).
 * There are some Broadcom cards like DW1560, DW1820A, BCM94360NG, which can use AirDrop well, are compatible with this machine. If you have them, this EFI is worked well. Make sure you have to add wireless and bluetooth kexts correctly (except BCM94360NG, this card is native with macOS, **don't use any kexts!**).
+* By default, there is no wifi/bluetooth kexts in the EFI folder!
 
 ### Sleep, Wake and Hibernation
 * Hibernation is not supported on a Hackintosh and everything related to it should be completely disabled. Disabling additional features prevents random wakeups while the lid is closed. After every update, these settings should be reapplied manually.
 ```
-sudo pmset -a hibernatemode 0
 sudo pmset -a autopoweroff 0
 sudo pmset -a powernap 0
 sudo pmset -a standby 0

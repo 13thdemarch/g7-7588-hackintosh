@@ -1,5 +1,16 @@
 Dell Inspiron G7 7588 Changelog
 ===============================
+Akisame Updates: November 2021
+- Update OC 0.7.5.
+- Update Clover 5141.
+- Update latest kexts.
+- Set CPUFriendDataProvider data to default for i7-8750H and SMBIOS MacBookPro15,1.
+- Optimized SSDTs.
+- Remove display connectors data (not need).
+- Remove Wi-Fi/Bluetooth kexts.
+- Create USB mapping folder for both Intel/Broadcom wireless card.
+- Set USB mapping kext for Intel card by default.
+
 #### Akisame Updates: October 2021
 - Start supporting Intel Wireless card system only.
 - Update OC 0.7.4.
