@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>Author</key>
-	<string>VNOHackintosh</string>
+	<string>ASKM</string>
 	<key>Description</key>
-	<string>Clover Monterey Theme</string>
+	<string>ACPI Theme</string>
 	<key>Theme</key>
 	<dict>
 		<key>Background</key>
@@ -82,7 +82,7 @@
 		</dict>
 	</dict>
 	<key>Version</key>
-	<string>1.3</string>
+	<string>1.0</string>
 	<key>Year</key>
 	<string>2021</string>
 </dict>

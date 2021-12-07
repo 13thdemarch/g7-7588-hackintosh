@@ -1,5 +1,15 @@
 Dell Inspiron G7 7588 Changelog
 ===============================
+Akisame Updates: December 2021
+- Update OC 0.7.6.
+- Update Clover 5142.
+- Update latest kexts.
+- Set Broadcom USB mapping kext for default.
+- Set CPUFriendDataProvider's data is similar to Windows.
+- Update SSDT-PNLF.aml
+- Improve system HPET, RTC, TIMR using SSDT-HRTFix.aml
+- Fix ACPI typo.
+
 Akisame Updates: November 2021
 - Update OC 0.7.5.
 - Update Clover 5141.

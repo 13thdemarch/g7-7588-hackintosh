@@ -3,13 +3,13 @@
 ![Monterey](screenshot.png)
 
 <p align = "center">
-macOS Big Sur
+macOS Monterey
 </p>
 
 * macOS:
   - Monterey 12.0.1 ✅
   - Big Sur 11.6 ✅
-* Bootloader: OpenCore 0.7.5, Clover 5141.
+* Bootloader: OpenCore 0.7.6, Clover 5142.
 * EFI can be used for both for installation and booting from SSD.
 
 ## Introduction
@@ -25,10 +25,10 @@ macOS Big Sur
 | CPU | Intel Core i7-8750H @ 2.20 GHz, 9M Cache, up to 4.10 GHz
 | RAM | SK Hynix 8GB DDR4-2666MHz HMA81GS6CJR8N-VK, Samsung 8GB DDR4-2666MHz M471A1K43CB1-CTD |
 | Monitor Panel | BOE NV156FHM @ 1080p, 144Hz |
-| SSD | Western Digital SN730 256GB NVMe Solid State Drive|
-| HDD | Seagate 1TB 2.5" 5400RPM Internal Hard Drive |
+| SSD1 | Western Digital SN730 256GB NVMe Solid State Drive (macOS) |
+| SSD2 | Samsung PM871b 256GB SATA Solid State Drive (Windows 11) |
 | Sound | Realtek ALC256/ALC3246 |
-| Wireless, Bluetooth | Intel Wireless AC9560 160MHz |
+| Wireless, Bluetooth | Fenvi BCM94360NG (94360 real Mac chipset) |
 | Integrated GPU | Intel UHD Graphics 630 (GT2) |
 | Dedicated GPU | Nvidia GTX 1050Ti (disabled) |
 | BIOS Version | 1.17.0 |
@@ -57,7 +57,7 @@ macOS Big Sur
 | Built-in Microphone | ✅ Working |
 | Webcam | ✅ Working |
 | Wi-Fi/Bluetooth | ✅ Working |
-| Airdrop/Handoff | 🔶 Airdrop doesn't work with Intel card. Handoff works correctly. |
+| Airdrop/Handoff | ✅ Working (Broadcom card) |
 | FileVault 2 (OpenCore recommended)| ✅ Working |
 | Hibernation | ✅ Working |
 | SD Card | ❌ Not working |
@@ -86,7 +86,7 @@ macOS Big Sur
   | Thunderbolt Security | `Disabled` | |
   | Thunderbolt Auto Switch | `Native Enumeration` | |
   | PTT Security | `Disabled` | You can enable it if you want to run Windows 11 |
-  | Secure Boot Enable | `Disabled` | |
+  | Secure Boot | `Disabled` | Can set to `Enabled` if you have already custom secure boot keys and signed OpenCore binaries |
   | Intel SGX | `Disabled` | |
   | VT for Direct I/O: | `Disabled` | |
   | Wake on USB | `Enabled` | Wake from keyboard works correctly | |
@@ -125,7 +125,7 @@ The default BIOS DVMT pre-alloc value of `64MB` is sufficient and does not need 
 ### Audio
 * For ALC256 on this G7, I use `layout-id = <0E000000>`, it means `14`.
 * Without any modifications, the headphone jack is buggy. External microphones aren't detected and the audio output may randomly stop working or start making weird noises.
-* Start from this version, I change to use **ALCPlugFix-Swift** method, instead of old method `ComboJack`. It gives better sound experience and performance when using the headset/headphone. Thanks to [Juan-VC](https://github.com/Juan-VC/Hackintosh-macOS-Dell-G7-7588/blob/main/codec_dump.txt) about his ALC256 codec_dump and [black-dragon74](https://github.com/black-dragon74/ALCPlugFix-Swift) about his ALCPlugFix-Swift method. To permanently fix this issue, please go to [Post-Install](https://github.com/akisame-reiu/Dell-Inspiron-G7-7588-Hackintosh#post-installation) for more information.
+* Start from this version, I change to use **ALCPlugFix-Swift** method, instead of old method `ComboJack`. It gives better sound experience and performance when using the headset/headphone. Thanks to [Juan-VC](https://github.com/Juan-VC/Hackintosh-macOS-Dell-G7-7588/blob/main/codec_dump.txt) about his ALC256 codec_dump and [black-dragon74](https://github.com/black-dragon74/ALCPlugFix-Swift) about his ALCPlugFix-Swift method. To permanently fix this issue, please go to [Post-Install](https://github.com/aksm-unmei/Dell-Inspiron-G7-7588-Hackintosh#post-installation) for more information.
   #### Fix audio broken after rebooting from Windows into macOS
   * DeviceProperties/Add/PciRoot(0x0)/Pci(0x1F,0x3)
     * `alctsel = <01000000>`
@@ -161,17 +161,16 @@ The default BIOS DVMT pre-alloc value of `64MB` is sufficient and does not need 
 * By default, there is no wifi/bluetooth kexts in the EFI folder!
 
 ### Sleep, Wake and Hibernation
-* Hibernation is not supported on a Hackintosh and everything related to it should be completely disabled. Disabling additional features prevents random wakeups while the lid is closed. After every update, these settings should be reapplied manually.
+* Hibernation now is worked correctly with `hibernatemode = 3` and `HibernationFixup.kext`.
+* Disabling additional features prevents random wakeups while the lid is closed. After every update, these settings should be reapplied manually.
 ```
 sudo pmset -a autopoweroff 0
 sudo pmset -a powernap 0
 sudo pmset -a standby 0
 sudo pmset -a proximitywake 0
 sudo pmset -a tcpkeepalive 0
-sudo rm -f /var/vm/sleepimage
-sudo mkdir /var/vm/sleepimage
 ```
-* Sleep and wake are improved and very fast now. Also, you can use shortcut key `Fn + Insert` to correct sleep on this machine. For more infomation, please check the [OpenCore 0.6.8](https://github.com/akisame-reiu/Hackintosh-Dell-G7-7588-OpenCore/blob/main/Changelog.md#v068) changelog.
+* Sleep and wake are improved and very fast now. Also, you can use shortcut key `Fn + Insert` to correct sleep function on this machine. For more infomation, please check the [OpenCore 0.6.8](https://github.com/aksm-unmei/Hackintosh-Dell-G7-7588-OpenCore/blob/main/Changelog.md#v068) changelog.
 
 ### CPU Power Management
 * CPU power management is done by `CPUFriend.kext` while `CPUFriendDataProvider.kext` defines how it should be done. `CPUFriendDataProvider.kext` is generated for a specific CPU and power setting. The one supplied in this repository was made for the i7-8750H. In case you have another CPU, you should follow [this guide](https://dortania.github.io/OpenCore-Post-Install/universal/pm.html) to generate your own `CPUFriendDataProvider.kext`.
@@ -203,6 +202,19 @@ sudo mkdir /var/vm/sleepimage
 
 </details>
 
+<details>  
+<summary><strong>UEFI Secure Boot, OpenCore and Windows 11</strong></summary>
+</br>
+
+* As reported on OpenCore Configuration at Chapter 12.2, OpenCore is designed to provide a secure boot chain between firmware and operating system. On most x86 platforms trusted loading is implemented via UEFI Secure Boot model. Not only OpenCore fully supports this model, but it also extends its capabilities to ensure sealed configuration via vaulting and provide trusted loading to the operating systems using custom verification, such as Apple Secure Boot.
+
+* Start from this month, I start supporting UEFI Secure Boot and OpenCore. UEFI Secure Boot works by using a set of keys embedded in the computer's firmware. These keys (or more precisely, their private counterparts) are used to sign boot loaders, drivers, option ROMs, and other software.
+
+* For a friendly guide, you can check this guide from [profzei](https://github.com/profzei/Matebook-X-Pro-2018/wiki/Enable-BIOS-Secure-Boot-with-OpenCore). His guide is very simple and easy to follow.
+
+* If you don't need UEFI Secure Boot, you can skip this option.
+
+</details>
 ## Credit
 * Apple for macOS.
 * Acidanthera Team for OpenCore Bootloader and many Kernel Extensions.
@@ -210,6 +222,7 @@ sudo mkdir /var/vm/sleepimage
 * Dortania Team for Coffee Lake laptop guide.
 * Juan-VC for ALC256 codec dump.
 * black-dragon74 for ALCPlugFix-Swift.
+* profzei for UEFI Secure Boot and OpenCore guide.
 
 ## Support
 * Support me: 
