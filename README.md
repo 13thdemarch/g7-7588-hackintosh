@@ -215,6 +215,7 @@ sudo pmset -a tcpkeepalive 0
 * If you don't need UEFI Secure Boot, you can skip this option.
 
 </details>
+
 ## Credit
 * Apple for macOS.
 * Acidanthera Team for OpenCore Bootloader and many Kernel Extensions.
