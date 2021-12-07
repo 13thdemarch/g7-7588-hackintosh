@@ -9,6 +9,7 @@
 - GPRW: Fix instant wake.
 - HDEF: Add ALC256 Pin/Node ID for CodecCommander kext, to be paired with ALCPlugFix-Swift.
 - PCID: Add missing PCI devices path.
-- PNLFCFL: Fix brightness control for CoffeeLake model.
+- PNLF: Fix brightness control.
 - PS2K: Modify PS2 keyboard. Disable Fn+B/S for brightness up/down.
 - PTSWAK: Fix sleep/wake.
+- HPE0, RTC0, TIM0: Improve system HPET, RTC, TMR.

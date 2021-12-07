@@ -198,7 +198,7 @@ sudo pmset -a tcpkeepalive 0
 <summary><strong>Dell G7 7588 Post-Install Script</strong></summary>
 </br>
 
-* Move `Post-Install` folder to `Desktop` and run after you're already finished installing macOS. It will help to fix the output and input audio when you plug 3.5mm headphone/headset/external speaker in, and disable hibernation for enhancing sleep.
+* Move `Post-Install` folder to `Desktop` and run after you're already finished installing macOS. It will help to fix the output and input audio when you plug 3.5mm headphone/headset/external speaker in and improve sleep.
 
 </details>
 
