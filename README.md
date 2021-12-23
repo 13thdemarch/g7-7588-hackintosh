@@ -69,7 +69,7 @@ This EFI repository contains the files needed to successfully boot into macOS on
   | PTT Security | `Disabled` | You can enable it if you want to run Windows 11 |
   | Secure Boot | `Disabled` | Can set to `Enabled` if you have already custom secure boot keys and signed OpenCore binaries |
   | Intel SGX | `Disabled` | |
-  | VT for Direct I/O: | `Disabled` | |
+  | VT for Direct I/O: | `Enabled` | Need for Windows 11 |
   | Wake on USB | `Enabled` | Wake from keyboard works correctly | |
   | Audo OS Recovery Threshold | `Disabled` | |
   | SupportAssist OS Recovery | `Disabled` | |
@@ -87,13 +87,13 @@ This EFI repository contains the files needed to successfully boot into macOS on
 * Integrated Intel UHD Graphics 630 support is handled by WhateverGreen, and configured in the `DeviceProperties` section of `config.plist`.
 * The NVIDIA GPU is not supported so it is disabled in SSDT.
 * The default BIOS DVMT pre-alloc value of `64MB` is sufficient and does not need to be changed.
-  ## Enable acceleration
+  #### Enable acceleration
   * DeviceProperties/Add/PciRoot(0x0)/Pci(0x2,0x0)
     * `AAPL,ig-platform-id = <0900A53E>`
-  ## Fix backlight registers on CoffeeLake platform
+  #### Fix backlight registers on CoffeeLake platform
   * DeviceProperties/Add/PciRoot(0x0)/Pci(0x2,0x0)
     * `enable-backlight-registers-fix = <01000000>`
-  ## Enable external display support
+  #### Enable external display support
   * DeviceProperties/Add/PciRoot(0x0)/Pci(0x2,0x0)
     * `agdpmod = <vit9696>`
 
@@ -101,12 +101,12 @@ This EFI repository contains the files needed to successfully boot into macOS on
 
 * For ALC256 on this G7, I use `layout-id = <0E000000>`, it means `14`.
 * Without any modifications, the headphone jack is buggy. External microphones aren't detected and the audio output may randomly stop working or start making weird noises.
-* Start from Oct 2021 update, I changed to use **ALCPlugFix-Swift** method, instead of old method `ComboJack`. It gives better sound experience and performance when using the headset/headphone. Thanks to [Juan-VC](https://github.com/Juan-VC/Hackintosh-macOS-Dell-G7-7588/blob/main/codec_dump.txt) about his ALC256 codec_dump and [black-dragon74](https://github.com/black-dragon74/ALCPlugFix-Swift) about his ALCPlugFix-Swift method. To permanently fix this issue, please go to [Post-Install](https://github.com/aksm-unmei/Dell-Inspiron-G7-7588-Hackintosh#post-installation) for more information.
+* Start from Oct 2021 update, I changed to use **ALCPlugFix-Swift** method, instead of old method `ComboJack`. It gives better sound experience and performance when using the headset/headphone. Thanks to [Juan-VC](https://github.com/Juan-VC/Hackintosh-macOS-Dell-G7-7588/blob/main/codec_dump.txt) about his ALC256 codec_dump and [black-dragon74](https://github.com/black-dragon74/ALCPlugFix-Swift) about his ALCPlugFix-Swift method. To permanently fix this issue, please go to [Post-Install](https://github.com/aksm-unmei/Dell-Inspiron-G7-7588-Hackintosh/tree/main#post-installation) for more information.
 
-  ## Fix audio broken after rebooting from Windows into macOS
+  #### Fix audio broken after rebooting from Windows into macOS
   * DeviceProperties/Add/PciRoot(0x0)/Pci(0x1F,0x3)
     * `alctsel = <01000000>`
-  ## Enable ALC Verbs support
+  #### Enable ALC Verbs support
   * DeviceProperties/Add/PciRoot(0x0)/Pci(0x1F,0x3)
     * `alc-verbs = <01000000>`
 
@@ -199,6 +199,7 @@ sudo pmset -a tcpkeepalive 0
 * If you don't need UEFI Secure Boot, you can skip this option.
 
 <h2>Thanks to</h2>
+
 * Acidanthera Team for OpenCore Bootloader and many Kernel Extensions.
 * Clover Team for Clover Bootloader.
 * Dortania Team for Coffee Lake laptop guide.
