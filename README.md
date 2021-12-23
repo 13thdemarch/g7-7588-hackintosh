@@ -114,7 +114,7 @@ This EFI repository contains the files needed to successfully boot into macOS on
 
 <h3>Hotpatches SSDT</h3>
 
-- SSDT-ALS0: Enable light sensor.
+- SSDT-ALS0: Enable native ambient light sensor.
 - SSDT-CPUPM: CPU power management.
 - SSDT-DDGPU: Disable dGPU.
 - SSDT-DELL: Special patches for Dell machine.
@@ -127,21 +127,22 @@ This EFI repository contains the files needed to successfully boot into macOS on
 - SSDT-PS2K: Modify PS2 keyboard. Disable Fn+B/S for brightness up/down.
 - SSDT-PTSWAK: Fix sleep/wake.
 - SSDT-HRTFix: Improve system HPET, RTC and TMR.
+- SSDT-XHC: Inject USB mapping ports to system without any kext.
 
 <h3>USB</h3>
 
-* There is a folder which includes USB mapping kext for both Intel and Broadcom card. By default, I use USB mapping kext for Broadcom card in EFI folders.
+* Great new: Now we don't need USB mapping kext anymore. In Jan 2022 update, I created SSDT-XHC, which is modified version of OEM USB ports ACPI named SSDT-xh_cfhd4. For both Intel and Broadcom card users, you don't need to worry about bluetooth port. I have already mapped both port in the SSDT. Enjoy!
 * The G7 7588 DSDT table has a few incorrect USB properties, but we can inject the correct properties via the kext which I've already mapped.
 
 | Name | Port | Type     | Visible | Description |
 |------|------|----------|---------|-------------|
-| HS01 | 1    | Type A   | Yes     | |
-| HS02 | 2    | Type A   | Yes     | |
-| HS03 | 3    | Type A   | Yes     | |
+| HS01 | 1    | Type A   | Yes     | Type A but can be mapped and worked well with Type 3 |
+| HS02 | 2    | Type A   | Yes     | Type A but can be mapped and worked well with Type 3 |
+| HS03 | 3    | Type A   | Yes     | Type A but can be mapped and worked well with Type 3 |
 | HS05 | 5    | Internal | Yes     | Integrated Webcam |
-| HS07 | 7    | Internal | No      | Broadcom card's Bluetooth, Broadcom kext only |
+| HS07 | 7    | Internal | Yes     | Broadcom card's bluetooth |
 | HS09 | 9    | Internal | Yes     | Goodix Fingerprint |
-| HS14 | 14   | Internal | Yes     | Intel card's Bluetooth, Intel kext only |
+| HS14 | 14   | Internal | Yes     | Intel card's bluetooth |
 | SS01 | 17   | Type 3   | Yes     | |
 | SS02 | 18   | Type 3   | Yes     | |
 | SS03 | 19   | Type 3   | Yes     | |

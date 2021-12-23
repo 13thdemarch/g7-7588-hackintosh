@@ -1,5 +1,23 @@
 Dell Inspiron G7 7588 Changelog
 ===============================
+Akisame Updates: January 2022
+- Update OC 0.7.7.
+- Update Clover 5143.
+- Update latest kexts.
+- Enable Vt-d in BIOS for Windows 11.
+- Enable DisableIoMapper in config.plist.
+- Add OpenLinuxBoot.efi, ext4_x64.efi for booting to Linux/Ubuntu.
+- Update a folder which contains CPUFriendDataProvider for Core i5 machine.
+- Remove NVMeFix.kext for native NVMe's power management.
+- Improve HPET's IRQNoFlag.
+- Improve RTC's alignment and length values (for better hibernation).
+- Remove unnecessary devices in SSDT-PCID.
+- Add FWHD device to SSDT-PCID.
+- Improve SSDT-ALS0 for enabling native Ambient Light Sensor device in DSDT.
+- Remove USB mapping kexts.
+- Remove USB map folder.
+- Inject USB mapping ports directly using SSDT-XHC (modified version of OEM SSDT-xh_cfhd4, which means the original one is dropped in config.plist).
+
 Akisame Updates: December 2021
 - Update OC 0.7.6.
 - Update Clover 5142.
