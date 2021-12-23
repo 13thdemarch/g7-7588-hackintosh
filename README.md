@@ -131,8 +131,8 @@ This EFI repository contains the files needed to successfully boot into macOS on
 
 <h3>USB</h3>
 
-* Great new: Now we don't need USB mapping kext anymore. In Jan 2022 update, I created SSDT-XHC, which is modified version of OEM USB ports ACPI named SSDT-xh_cfhd4. For both Intel and Broadcom card users, you don't need to worry about bluetooth port. I have already mapped both port in the SSDT. Enjoy!
-* The G7 7588 DSDT table has a few incorrect USB properties, but we can inject the correct properties via the kext which I've already mapped.
+* **Great new**: Now we don't need USB mapping kext anymore. In Jan 2022 update, I created SSDT-XHC, which is modified version of OEM USB ports ACPI named SSDT-xh_cfhd4. For both Intel and Broadcom card users, you don't need to worry about bluetooth port. I have already mapped both port in the SSDT. Enjoy!
+* The G7 7588 DSDT table has a few incorrect USB properties, but we can inject the correct properties via SSDT-XHC which I've already mapped.
 
 | Name | Port | Type     | Visible | Description |
 |------|------|----------|---------|-------------|
