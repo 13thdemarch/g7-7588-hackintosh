@@ -13,6 +13,9 @@ Akisame Updates: January 2022
 - Improve RTC's alignment and length values (for better hibernation).
 - Remove unnecessary devices in SSDT-PCID.
 - Add FWHD device to SSDT-PCID.
+- Add PPMC device to SSDT-PCID (_ADR should be Zero. macOS can't detect if _ADR is 0x001F0002).
+- Add ARTC device to SSDT-PCID.
+- Rework SSDT-DGPU, to be pair with SSDT-PTSWAK.
 - Improve SSDT-ALS0 for enabling native Ambient Light Sensor device in DSDT.
 - Remove USB mapping kexts.
 - Remove USB map folder.
