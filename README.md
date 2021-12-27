@@ -14,7 +14,7 @@ This EFI repository contains the files needed to successfully boot into macOS on
 | RAM | SK Hynix 8GB DDR4-2666MHz HMA81GS6CJR8N-VK, Samsung 8GB DDR4-2666MHz M471A1K43CB1-CTD |
 | Monitor Panel | BOE NV156FHM @ 1080p, 144Hz |
 | SSD1 | Western Digital SN730 256GB NVMe Solid State Drive (macOS) |
-| SSD2 | Samsung PM871b 256GB SATA Solid State Drive (Windows 11) |
+| SSD2 | Samsung PM871b 256GB SATA Solid State Drive (Windows, Ubuntu) |
 | Sound | Realtek ALC256/ALC3246 |
 | Wireless, Bluetooth | Fenvi BCM94360NG (94360 real Mac chipset) |
 | Integrated GPU | Intel UHD Graphics 630 (GT2) |
@@ -69,7 +69,7 @@ This EFI repository contains the files needed to successfully boot into macOS on
   | PTT Security | `Disabled` | You can enable it if you want to run Windows 11 |
   | Secure Boot | `Disabled` | Can set to `Enabled` if you have already custom secure boot keys and signed OpenCore binaries |
   | Intel SGX | `Disabled` | |
-  | VT for Direct I/O: | `Enabled` | Need for Windows 11 |
+  | VT for Direct I/O: | `Disabled` | You can enable it if you want to run Windows 11 (need for security) |
   | Wake on USB | `Enabled` | Wake from keyboard works correctly | |
   | Audo OS Recovery Threshold | `Disabled` | |
   | SupportAssist OS Recovery | `Disabled` | |
@@ -101,7 +101,7 @@ This EFI repository contains the files needed to successfully boot into macOS on
 
 * For ALC256 on this G7, I use `layout-id = <0E000000>`, it means `14`.
 * Without any modifications, the headphone jack is buggy. External microphones aren't detected and the audio output may randomly stop working or start making weird noises.
-* Start from Oct 2021 update, I changed to use **ALCPlugFix-Swift** method, instead of old method `ComboJack`. It gives better sound experience and performance when using the headset/headphone. Thanks to [Juan-VC](https://github.com/Juan-VC/Hackintosh-macOS-Dell-G7-7588/blob/main/codec_dump.txt) about his ALC256 codec_dump and [black-dragon74](https://github.com/black-dragon74/ALCPlugFix-Swift) about his ALCPlugFix-Swift method. To permanently fix this issue, please go to [Post-Install](https://github.com/aksm-unmei/Dell-Inspiron-G7-7588-Hackintosh/tree/main#post-installation) for more information.
+* Start from Oct 2021 update, I changed to **ALCPlugFix-Swift** method, instead of old method `ComboJack`. It gives better sound experience and performance when using the headset/headphone. Thanks to [Juan-VC](https://github.com/Juan-VC/Hackintosh-macOS-Dell-G7-7588/blob/main/codec_dump.txt) about his ALC256 codec_dump and [black-dragon74](https://github.com/black-dragon74/ALCPlugFix-Swift) about his ALCPlugFix-Swift method. To permanently fix this issue, please go to [Post-Install](https://github.com/aksm-unmei/Dell-Inspiron-G7-7588-Hackintosh/tree/main#post-installation) for more information.
 
   #### Fix audio broken after rebooting from Windows into macOS
   * DeviceProperties/Add/PciRoot(0x0)/Pci(0x1F,0x3)
