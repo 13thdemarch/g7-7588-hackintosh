@@ -4,8 +4,6 @@ Akisame Updates: January 2022
 - Update OC 0.7.7.
 - Update Clover 5143.
 - Update latest kexts.
-- Enable Vt-d in BIOS for Windows 11.
-- Enable DisableIoMapper in config.plist.
 - Add OpenLinuxBoot.efi, ext4_x64.efi for booting to Linux/Ubuntu.
 - Update a folder which contains CPUFriendDataProvider for Core i5 machine.
 - Remove NVMeFix.kext for native NVMe's power management.
@@ -13,7 +11,7 @@ Akisame Updates: January 2022
 - Improve RTC's alignment and length values (for better hibernation).
 - Remove unnecessary devices in SSDT-PCID.
 - Add FWHD device to SSDT-PCID.
-- Add PPMC device to SSDT-PCID (_ADR should be Zero. macOS can't detect if _ADR is 0x001F0002).
+- Add PPMC device to SSDT-PCID (_ADR should be Zero. macOS can't detect if _ADR is 0x001F0002 on this machine because it's not existed).
 - Add ARTC device to SSDT-PCID.
 - Rework SSDT-DGPU, to be pair with SSDT-PTSWAK.
 - Improve SSDT-ALS0 for enabling native Ambient Light Sensor device in DSDT.
