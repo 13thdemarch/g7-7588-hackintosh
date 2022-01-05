@@ -7,6 +7,9 @@
     <img src="https://img.shields.io/badge/OpenCore-0.7.7-12AED6"></a> &nbsp;&nbsp;
   <a href="https://github.com/CloverHackyColor/CloverBootloader">
     <img src="https://img.shields.io/badge/Clover-5142-12AED6"></a> &nbsp;&nbsp;
+</p>
+
+<p>
   <img src="./asset/g7.png" alt="Dell G7 7588" width="40%">
   <a href="https://www.dell.com/support/home/en-vn/drivers/driversdetails?driverid=g8n87&oscode=wt64a&productcode=g-series-15-7588-laptop">
 </p>
