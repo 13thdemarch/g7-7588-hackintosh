@@ -8,7 +8,7 @@
   <a href="https://github.com/acidanthera/OpenCorePkg">
     <img src="https://img.shields.io/badge/OpenCore-0.7.7-12AED6"></a> &nbsp;&nbsp;
   <a href="https://github.com/CloverHackyColor/CloverBootloader">
-    <img src="https://img.shields.io/badge/Clover-5142-12AED6"></a> &nbsp;&nbsp;
+    <img src="https://img.shields.io/badge/Clover-5143-green"></a> &nbsp;&nbsp;
 </p>
 
 <p align="center">
