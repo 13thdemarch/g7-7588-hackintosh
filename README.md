@@ -2,13 +2,13 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/macOS-12.1-red">
-  <img src="./asset/g7.png" alt="Dell G7 7588">
-  <a href="https://www.dell.com/support/home/en-vn/drivers/driversdetails?driverid=g8n87&oscode=wt64a&productcode=g-series-15-7588-laptop">
     <img src="https://img.shields.io/badge/BIOS-1.18-blue"></a> &nbsp;&nbsp;
   <a href="https://github.com/acidanthera/OpenCorePkg">
     <img src="https://img.shields.io/badge/OpenCore-0.7.7-12AED6"></a> &nbsp;&nbsp;
   <a href="https://github.com/CloverHackyColor/CloverBootloader">
     <img src="https://img.shields.io/badge/Clover-5142-12AED6"></a> &nbsp;&nbsp;
+  <img src="./asset/g7.png" alt="Dell G7 7588" width="40%">
+  <a href="https://www.dell.com/support/home/en-vn/drivers/driversdetails?driverid=g8n87&oscode=wt64a&productcode=g-series-15-7588-laptop">
 </p>
 
 This EFI repository contains the files needed to successfully boot into macOS on Dell G7 7588 with Opencore and Clover, also it's very stable now. macOS 12 Monterey works well with Windows 11 in dual boot, even with builtin UEFI Secure Boot with custom secure boot keys (currently OpenCore only). There are probably things that can be improved, so feel free to open issues or even PRs with suggestions or observations.
