@@ -45,6 +45,7 @@ This EFI repository contains the files needed to successfully boot into macOS on
 - Add AudioDxe.efi for boot-chime (enabled by default).
 - FileVault 2's setting is enabled by default.
 - Update PointerPollMin, PointerPollMax and PointerPollMask values.
+- Add custom HiDPI script.
 
 ## Guide
 
