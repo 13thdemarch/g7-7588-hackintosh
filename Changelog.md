@@ -4,20 +4,25 @@ Akisame Updates: January 2022
 - Update OC 0.7.7.
 - Update Clover 5143.
 - Update latest kexts.
-- Add OpenLinuxBoot.efi, ext4_x64.efi for booting to Linux/Ubuntu.
 - Update a folder which contains CPUFriendDataProvider for Core i5 machine.
 - Remove NVMeFix.kext for native NVMe's power management.
 - Improve HPET's IRQNoFlag.
 - Improve RTC's alignment and length values (for better hibernation).
 - Remove unnecessary devices in SSDT-PCID.
 - Add FWHD device to SSDT-PCID.
-- Add PPMC device to SSDT-PCID (_ADR should be Zero. macOS can't detect if _ADR is 0x001F0002 on this machine because it's not existed).
+- Add PPMC device to SSDT-PCID (_ADR is Zero. macOS can't detect if _ADR is 0x001F0002 on this machine because it's not existed).
 - Add ARTC device to SSDT-PCID.
 - Rework SSDT-DGPU, to be pair with SSDT-PTSWAK.
 - Improve SSDT-ALS0 for enabling native Ambient Light Sensor device in DSDT.
 - Remove USB mapping kexts.
 - Remove USB map folder.
 - Inject USB mapping ports directly using SSDT-XHC (modified version of OEM SSDT-xh_cfhd4, which means the original one is dropped in config.plist).
+- Change inject x86 to realize CPU power management method in SSDT-CPUPM.
+- Disable Goodix Fingerprint in SSDT-XHC (better battery life I think).
+- Add AudioDxe.efi for boot-chime (enabled by default, OpenCore only).
+- FileVault 2's setting is enabled by default (OpenCore only).
+- Set PointerPollMin, PointerPollMax and PointerPollMask values (OpenCore 0.7.7).
+- Add custom HiDPI script.
 
 Akisame Updates: December 2021
 - Update OC 0.7.6.
