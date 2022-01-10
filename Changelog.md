@@ -12,7 +12,7 @@ Akisame Updates: January 2022
 - Add FWHD device to SSDT-PCID.
 - Add PPMC device to SSDT-PCID (_ADR is Zero. macOS can't detect if _ADR is 0x001F0002 on this machine because it's not existed).
 - Add ARTC device to SSDT-PCID.
-- Rework SSDT-DGPU, to be pair with SSDT-PTSWAK.
+- Rework SSDT-DDGPU, to be paired with SSDT-PTSWAK.
 - Improve SSDT-ALS0 for enabling native Ambient Light Sensor device in DSDT.
 - Remove USB mapping kexts.
 - Remove USB map folder.
