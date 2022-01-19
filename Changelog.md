@@ -1,5 +1,13 @@
 Dell Inspiron G7 7588 Changelog
 ===============================
+Akisame Updates: February 2022
+- Update OC 0.7.8.
+- Update latest kexts.
+- Change PointerPollMax values (improving UI and delay time at OpenCanopy and FileVault 2).
+- Add USBInjectAll and XHCI-Unsupported kext (fix losing usb power because of ACPI USB OEM method).
+- Add SSDT usb ports for Broadcom and Intel wireless card.
+- Add config.plist for Intel wireless card.
+
 Akisame Updates: January 2022
 - Update OC 0.7.7.
 - Update Clover 5143.
