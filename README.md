@@ -28,10 +28,10 @@ This EFI repository contains the files needed to successfully boot into macOS on
 - Drop Clover EFI folder (reason: kext loading buggy)
 - Change PointerPollMax values (improving UI and delay time at OpenCanopy and FileVault2.
 - Add USBInjectAll and XHCI-Unsupported kext.
-- Add config.plist for Intel wireless card.
 - Add NVMeFix kext back to reduce idle power consumption of the controller.
 - Rewrite all ACPI patches and merge to one file, avoid booting to Windows.
-- Separate SSDT patches for Broadcom card and Intel card.
+- Hotpatch SSDT for Broadcom card is set by default.
+- Add hotpatch SSDT for Intel wireless card.
 
 ## Guide
 
