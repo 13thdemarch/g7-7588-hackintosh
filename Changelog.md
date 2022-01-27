@@ -5,11 +5,10 @@ Akisame Updates: February 2022
 - Update latest kexts.
 - Drop Clover EFI folder (reason: kext loading buggy)
 - Change PointerPollMax values (improving UI and delay time at OpenCanopy and FileVault2.
-- Add USBInjectAll and XHCI-Unsupported kext.
+- Add USBPorts and XHCI-Unsupported kext.
 - Add NVMeFix kext back to reduce idle power consumption of the controller.
 - Rewrite all ACPI patches and merge to one file, avoid booting to Windows.
-- Hotpatch SSDT for Broadcom card is set by default.
-- Add hotpatch SSDT for Intel wireless card.
+- Disable Device (RHUB) in DSDT (to get native USB ports with USBPorts.kext).
 
 Akisame Updates: January 2022
 - Update OC 0.7.7.
