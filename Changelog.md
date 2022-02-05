@@ -6,9 +6,9 @@ Akisame Updates: February 2022
 - Drop Clover EFI folder (reason: kext loading buggy)
 - Change PointerPollMax values (improving UI and delay time at OpenCanopy and FileVault2.
 - Add USBPorts and XHCI-Unsupported kext.
+- Disable Device (RHUB) in DSDT (to get native USB ports in macOS with USBPorts.kext).
 - Add NVMeFix kext back to reduce idle power consumption of the controller.
 - Rewrite all ACPI patches and merge to one file, avoid booting to Windows.
-- Disable Device (RHUB) in DSDT (to get native USB ports with USBPorts.kext).
 
 Akisame Updates: January 2022
 - Update OC 0.7.7.
