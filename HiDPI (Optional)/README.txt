@@ -1,1 +1,0 @@
-Move this folder to Desktop first, then run hidpi-install.command
