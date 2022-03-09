@@ -23,15 +23,12 @@ This EFI repository contains the files needed to successfully boot into macOS on
 
 ### Latest changelog
 
-- Update OC 0.7.8.
+- Update OC 0.7.9.
 - Update latest kexts.
-- Drop Clover EFI folder (reason: kext loading buggy)
-- Change PointerPollMax values (improving UI and delay time at OpenCanopy and FileVault2.
-- Add USBPorts and XHCI-Unsupported kext.
-- Add NVMeFix kext back to reduce idle power consumption of the controller.
-- Rewrite all ACPI patches and merge to one file, avoid booting to Windows.
-- Disable Device (RHUB) in DSDT (to get native USB ports with USBPorts.kext).
-
+- Remove Method GPRW in SSDT.
+- Intel wireless card's kexts are set by default (Wi-Fi kext AirportItlwm is for macOS Monterey).
+- Add AudioDxe and CrScreenShotDxe drivers.
+- Add Type-C hotplug SSDT and kext (optional).
 
 ## Guide
 
