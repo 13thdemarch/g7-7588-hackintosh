@@ -1,6 +1,14 @@
 Dell Inspiron G7 7588 Changelog
 ===============================
-Akisame Updates: February 2022
+#### Tarutaru Updates: February 2022
+- Update OC 0.7.9.
+- Update latest kexts.
+- Remove Method GPRW in SSDT (improve sleep).
+- Intel wireless card's kexts are set by default (Wi-Fi kext AirportItlwm is for macOS Monterey).
+- Add AudioDxe and CrScreenShotDxe drivers.
+- Add Type-C hotplug SSDT and kext (optional).
+
+#### Tarutaru Updates: February 2022
 - Update OC 0.7.8.
 - Update latest kexts.
 - Drop Clover EFI folder (reason: kext loading buggy)
@@ -10,7 +18,7 @@ Akisame Updates: February 2022
 - Add NVMeFix kext back to reduce idle power consumption of the controller.
 - Rewrite all ACPI patches and merge to one file, avoid booting to Windows.
 
-Akisame Updates: January 2022
+#### Tarutaru Updates: January 2022
 - Update OC 0.7.7.
 - Update Clover 5143.
 - Update latest kexts.
@@ -34,7 +42,7 @@ Akisame Updates: January 2022
 - Set PointerPollMin, PointerPollMax and PointerPollMask values (OpenCore 0.7.7).
 - Add custom HiDPI script.
 
-Akisame Updates: December 2021
+#### Tarutaru Updates: December 2021
 - Update OC 0.7.6.
 - Update Clover 5142.
 - Update latest kexts.
@@ -44,7 +52,7 @@ Akisame Updates: December 2021
 - Improve system HPET, RTC, TIMR using SSDT-HRTFix.aml
 - Fix ACPI typo.
 
-Akisame Updates: November 2021
+#### Tarutaru Updates: November 2021
 - Update OC 0.7.5.
 - Update Clover 5141.
 - Update latest kexts.
@@ -55,7 +63,7 @@ Akisame Updates: November 2021
 - Create USB mapping folder for both Intel/Broadcom wireless card.
 - Set USB mapping kext for Intel card by default.
 
-#### Akisame Updates: October 2021
+#### Tarutaru Updates: October 2021
 - Start supporting Intel Wireless card system only.
 - Update OC 0.7.4.
 - Update Clover 5140.
@@ -68,7 +76,7 @@ Akisame Updates: November 2021
 - Add `alc-verbs` property to enable ALC Verb support.
 - Add HibernationFixup kext to improve hibernation (mode 3).
 
-#### Akisame Updates: September 2021
+#### Tarutaru Updates: September 2021
 - Update OpenCore 0.7.3 (It's better than I thought)
 - Update Clover 5139.
 - Update lastest kexts.
@@ -79,7 +87,7 @@ Akisame Updates: November 2021
 - Remove unnecessary device.
 - Fix Intel Bluetooth on macOS Monterey Beta (OpenCore only. See config-intel.plist for more infomation).
 
-#### Akisame Updates: August 2021
+#### Tarutaru Updates: August 2021
 - Update OpenCore 0.7.2.
 - Update Clover 5138.
 - Update lastest kexts.
@@ -88,10 +96,10 @@ Akisame Updates: November 2021
 - Update wireless and bluetooth kext folder.
 - Update USB mapping kext folder.
 
-#### Akisame Updates: July 2021
+#### Tarutaru Updates: July 2021
 - Bump version.
 
-#### Akisame Updates: June 2021
+#### Tarutaru Updates: June 2021
 - Change repository name.
 - Add Clover Bootloader EFI.
 - Add connector patches for user who is using two external monitors.
@@ -101,7 +109,7 @@ Akisame Updates: November 2021
 - Remove TB3/Type-C hotplug code in SSDT and IOElectrify kext because of some issues between macOS 11.4 and BIOS.
 - Remove DMAC, PMCR, HPET, TMR, IPIC, RTC in SSDT (not need).
 
-#### Akisame Updates: May 2021
+#### Tarutaru Updates: May 2021
 - Bump to OC 0.6.9.
 - Update lastest kexts.
 - Remove Device (UIAC) for USB mapping, replaced with USBMap.kext.
@@ -111,7 +119,7 @@ Akisame Updates: November 2021
 - Add audio property `alctsel = <01000000>` for fixing missing audio if rebooting from Windows to macOS.
 - Make the PCI more cleaner.
 
-#### Akisame Updates: April 2021
+#### Tarutaru Updates: April 2021
 - Bump to OC 0.6.7 Plus :< ~~(Why plus: Because current version of VoodooI2C can't run on OC 0.6.8)~~.
 - Bump to OC 0.6.8.
 - Everything is fine now.
@@ -129,7 +137,7 @@ Akisame Updates: November 2021
 - Improve touchpad gestures.
 - Add CFGUnlock.efi for automatically unlocking MSR 0x02
 
-#### Akisame Updates: March 2021
+#### Tarutaru Updates: March 2021
 - Latest kernel extensions.
 - Fix backlight registers on CoffeeLake platform using properties `enable-backlight-registers-fix = <01000000>`.
 - Fix some bugs with OpenCanopy theme.
@@ -137,11 +145,11 @@ Akisame Updates: November 2021
 - Merge all SSDTs to only one.
 - Optimize USB Type-C/Thunderbolt 3 hotplug method in SSDT, remove unnecessary things.
 
-#### Akisame Updates: February 2021
+#### Tarutaru Updates: February 2021
 - Latest kernel extensions.
 - Update OpenCore theme with background.
 
-#### Akisame Updates: January 2021
+#### Tarutaru Updates: January 2021
 - Lastest kernel extension.
 - "Extracted" SSDT-OC-7588.aml.
 - Change AAPL,ig-platform-id back to 00009B3E.
@@ -151,7 +159,7 @@ Akisame Updates: November 2021
 - Add SSDT-UIAC.aml for USB mapping.
 - Optimize SSDTs.
 
-#### Akisame Updates: December 2020
+#### Tarutaru Updates: December 2020
 - Stable EFI for Big Sur with OC 0.6.4.
 - Lastest kernel extensions.
 - Change AAPL,ig-platform-id back to 0900A53E.
