@@ -78,12 +78,12 @@
 						<key>port</key>
 						<data>BQAAAA==</data>
 					</dict>
-					<key>HS14</key>
+					<key>HS07</key>
 					<dict>
 						<key>UsbConnector</key>
 						<integer>255</integer>
 						<key>name</key>
-						<string>HS14</string>
+						<string>HS07</string>
 						<key>port</key>
 						<data>DgAAAA==</data>
 					</dict>
