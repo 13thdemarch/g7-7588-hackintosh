@@ -5,6 +5,7 @@ Dell Inspiron G7 7588 Changelog
 - Update latest kexts.
 - Improve ALCPlugFix install command.
 - Fix USB ports for Broadcom card.
+- Change SMBIOS to MacBookPro15,2 for better UHD630 performance and better battery.
 
 #### Tarutaru Updates: February 2022
 - Update OC 0.7.9.
