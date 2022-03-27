@@ -2,12 +2,14 @@ Dell Inspiron G7 7588 Changelog
 ===============================
 #### Tarutaru Updates: April 2022
 - Update OC 0.8.0.
+- Update Clover 5146.
 - Update latest kexts.
 - Improve ALCPlugFix install command.
 - Fix USB ports for Broadcom card.
-- Change SMBIOS to MacBookPro15,2 for better UHD630 performance and better battery.
+- Change SMBIOS to MacBookPro15,2 for better UHD630 performance and better battery (I guess).
 - Add boot argument `-noht40` to disable 40MHz when using 2.4GHz (Natively supported adapters by Apple disable 2.4GHz HT40 by default).
-- Add boot argument `itlwm_cc=JP` for user who is living in Japan (Wi-Fi in Japan is a bit different for some reasons). 
+- Add boot argument `itlwm_cc=JP` for user who is living in Japan (Wi-Fi in Japan is a bit different for some reasons).
+- Add Clover EFI folder back.
 
 #### Tarutaru Updates: February 2022
 - Update OC 0.7.9.
