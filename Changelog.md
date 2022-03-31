@@ -10,7 +10,7 @@ Dell Inspiron G7 7588 Changelog
 - Add boot argument `-noht40` to disable 40MHz when using 2.4GHz (Natively supported adapters by Apple disable 2.4GHz HT40 by default).
 - Add boot argument `itlwm_cc=JP` for user who is living in Japan (Wi-Fi in Japan is a bit different for some reasons).
 - Add Clover EFI folder back.
-- Remove CodecCommander.kext and ALC256's code patch (somehow we don't need it anymore...).
+- Remove CodecCommander.kext and ALC256's code patch (somehow we don't need them anymore...).
 
 #### Tarutaru Updates: February 2022
 - Update OC 0.7.9.
