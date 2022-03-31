@@ -11,6 +11,7 @@ Dell Inspiron G7 7588 Changelog
 - Add boot argument `itlwm_cc=JP` for user who is living in Japan (Wi-Fi in Japan is a bit different for some reasons).
 - Add Clover EFI folder back.
 - Remove CodecCommander.kext and ALC256's code patch (somehow we don't need them anymore...).
+- Update hotplug SSDT for USB-C port.
 
 #### Tarutaru Updates: February 2022
 - Update OC 0.7.9.
