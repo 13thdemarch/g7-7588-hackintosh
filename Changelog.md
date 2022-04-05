@@ -12,6 +12,7 @@ Dell Inspiron G7 7588 Changelog
 - Add Clover EFI folder back.
 - Remove CodecCommander.kext and ALC256's code patch (somehow we don't need them anymore...).
 - Update hotplug SSDT for USB-C port.
+- Update PointerPollMask, PointerPollMin, PointerPollMax value.
 
 #### Tarutaru Updates: February 2022
 - Update OC 0.7.9.
