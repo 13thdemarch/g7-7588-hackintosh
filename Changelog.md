@@ -13,6 +13,7 @@ Dell Inspiron G7 7588 Changelog
 - Remove CodecCommander.kext and ALC256's code patch (somehow we don't need them anymore...).
 - Update hotplug SSDT for USB-C port.
 - Update PointerPollMask, PointerPollMin, PointerPollMax value.
+- New experience: Replace VoodooI2CHID with VoodooRMI (The touchpad is from Synaptic but using I2C HID).
 
 #### Tarutaru Updates: February 2022
 - Update OC 0.7.9.
