@@ -7,8 +7,8 @@ Dell Inspiron G7 7588 Changelog
 - Improve ALCPlugFix install command.
 - Fix USB ports for Broadcom card.
 - Change SMBIOS to MacBookPro15,2 for better UHD630 performance and better battery (I guess).
-- Add boot argument `-noht40` to disable 40MHz when using 2.4GHz (Natively supported adapters by Apple disable 2.4GHz HT40 by default).
-- Add boot argument `itlwm_cc=JP` for user who is living in Japan (Wi-Fi in Japan is a bit different for some reasons).
+- Add boot argument `-noht40` to disable 40MHz when using 2.4GHz (Natively supported adapters by Apple disable 2.4GHz HT40 by default) (Intel wireless card required).
+- Add boot argument `itlwm_cc=JP` for user who is living in Japan (Wi-Fi in Japan is a bit different for some reasons) (Intel wireless card required).
 - Add Clover EFI folder back.
 - Remove CodecCommander.kext and ALC256's code patch (somehow we don't need them anymore...).
 - Update hotplug SSDT for USB-C port.
