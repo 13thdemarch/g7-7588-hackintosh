@@ -14,7 +14,7 @@ Dell Inspiron G7 7588 Changelog
 - Update hotplug SSDT for USB-C port.
 - Update PointerPollMask, PointerPollMin, PointerPollMax value.
 - New experience: Replace VoodooI2CHID with VoodooRMI (The touchpad is from Synaptic but using I2C HID).
-- Import Type-C/Thunderbolt3 hotplug method to main SSDT by default.
+- Add Type-C/Thunderbolt3 hotplug method to main SSDT by default.
 
 #### Tarutaru Updates: February 2022
 - Update OC 0.7.9.
