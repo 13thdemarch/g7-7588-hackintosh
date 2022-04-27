@@ -1,8 +1,11 @@
 Dell Inspiron G7 7588 Changelog
 ===============================
-#### Tarutaru Updates: May 2022
+#### Tarutaru Updates: June 2022
+- Update OC 0.8.1.
+- Update lastest kexts.
 - Remove unnecessary patches in SSDT.
 - Rework SSDT and config.plist (codeless, cleaner, leave most everything by default by Dell, more stable? Wakaranai ¯\_(ツ)_/¯. This machine is weird).
+- Fix HPET/IRQ Conflicts correctly according the flags value in DSDT.
 
 #### Tarutaru Updates: April 2022
 - Update OC 0.8.0.
