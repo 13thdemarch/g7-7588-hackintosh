@@ -1,8 +1,6 @@
 Dell Inspiron G7 7588 Changelog
 ===============================
 #### Tarutaru Updates: July 2022
-- Stay with Clover. OpenCore is very stable now.
-- Update lastest kexts.
 - Add MMIO whitelist.
 
 #### Tarutaru Updates: June 2022

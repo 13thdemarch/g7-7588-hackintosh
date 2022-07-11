@@ -1,14 +1,14 @@
 <h1 align="center"> Dell Inspiron G7 7588 Hackintosh </h1>
 
 <p align="center">
-  <a href="https://www.apple.com/macos/monterey/">
-    <img src="https://img.shields.io/badge/macOS-12.3.1-red"></a> &nbsp;&nbsp;
-  <a href="https://www.dell.com/support/home/en-vn/drivers/driversdetails?driverid=g8n87&oscode=wt64a&productcode=g-series-15-7588-laptop">
-    <img src="https://img.shields.io/badge/BIOS-1.20-blue"></a> &nbsp;&nbsp;
+  <a href="https://www.apple.com/">
+    <img src="https://img.shields.io/badge/macOS-11.6.7-red"></a> &nbsp;&nbsp;
+  <a href="https://www.dell.com/support/home/en-vn/drivers/driversdetails?driverid=1dkg0&oscode=wt64a&productcode=g-series-15-7588-laptop">
+    <img src="https://img.shields.io/badge/BIOS-1.21-blue"></a> &nbsp;&nbsp;
   <a href="https://github.com/acidanthera/OpenCorePkg">
-    <img src="https://img.shields.io/badge/OpenCore-0.8.0-12AED6"></a> &nbsp;&nbsp;
+    <img src="https://img.shields.io/badge/OpenCore-0.8.2-12AED6"></a> &nbsp;&nbsp;
   <a href="https://github.com/CloverHackyColor/CloverBootloader">
-    <img src="https://img.shields.io/badge/Clover-5146-00CC00"></a> &nbsp;&nbsp;
+    <img src="https://img.shields.io/badge/Clover-5148-00CC00"></a> &nbsp;&nbsp;
 </p>
 
 <p align="center">
@@ -23,20 +23,7 @@ This EFI repository contains the files needed to successfully boot into macOS on
 
 ### Latest changelog
 
-- Update OC 0.8.0.
-- Update Clover 5146.
-- Update latest kexts.
-- Improve ALCPlugFix install command.
-- Fix USB ports for Broadcom card.
-- Change SMBIOS to MacBookPro15,2 for better UHD630 performance and better battery (I guess).
-- Add boot argument `-noht40` to disable 40MHz when using 2.4GHz (Natively supported adapters by Apple disable 2.4GHz HT40 by default) (Intel wireless card required).
-- Add boot argument `itlwm_cc=JP` for user who is living in Japan (Wi-Fi in Japan is a bit different for some reasons) (Intel wireless card required).
-- Add Clover EFI folder back.
-- Remove CodecCommander.kext and ALC256's code patch (somehow we don't need them anymore...).
-- Update hotplug SSDT for USB-C port.
-- Update PointerPollMask, PointerPollMin, PointerPollMax value.
-- New experience: Replace VoodooI2CHID with VoodooRMI (The touchpad is from Synaptic but using I2C HID).
-- Import Type-C/Thunderbolt3 hotplug method to main SSDT by default.
+- Add MMIO whitelist.
 
 ## Guide
 
