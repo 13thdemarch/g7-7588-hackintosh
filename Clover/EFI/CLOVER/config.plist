@@ -45,7 +45,7 @@
 				<key>AddPNLF</key>
 				<false/>
 				<key>DeleteUnused</key>
-				<false/>
+				<true/>
 				<key>FakeLPC</key>
 				<false/>
 				<key>FixACST</key>
@@ -75,11 +75,11 @@
 				<key>FixLAN</key>
 				<false/>
 				<key>FixMutex</key>
-				<false/>
+				<true/>
 				<key>FixRTC</key>
 				<false/>
 				<key>FixRegions</key>
-				<false/>
+				<true/>
 				<key>FixS3D</key>
 				<false/>
 				<key>FixSATA</key>
@@ -102,92 +102,128 @@
 				<dict>
 					<key>Comment</key>
 					<string>Change PNLF to XNLF</string>
+					<key>Count</key>
+					<integer>0</integer>
 					<key>Disabled</key>
 					<false/>
 					<key>Find</key>
 					<data>UE5MRg==</data>
 					<key>Replace</key>
 					<data>WE5MRg==</data>
+					<key>Skip</key>
+					<integer>0</integer>
 				</dict>
 				<dict>
 					<key>Comment</key>
 					<string>Change _PTS to ZPTS(1,N)</string>
+					<key>Count</key>
+					<integer>0</integer>
 					<key>Disabled</key>
 					<false/>
 					<key>Find</key>
 					<data>X1BUUwE=</data>
 					<key>Replace</key>
 					<data>WlBUUwE=</data>
+					<key>Skip</key>
+					<integer>0</integer>
 				</dict>
 				<dict>
 					<key>Comment</key>
 					<string>Change _WAK to ZWAK(1,N)</string>
+					<key>Count</key>
+					<integer>0</integer>
 					<key>Disabled</key>
 					<false/>
 					<key>Find</key>
 					<data>X1dBSwE=</data>
 					<key>Replace</key>
 					<data>WldBSwE=</data>
+					<key>Skip</key>
+					<integer>0</integer>
 				</dict>
 				<dict>
 					<key>Comment</key>
 					<string>Change _LID to XLID</string>
+					<key>Count</key>
+					<integer>0</integer>
 					<key>Disabled</key>
 					<false/>
 					<key>Find</key>
 					<data>X0xJRAA=</data>
 					<key>Replace</key>
 					<data>WExJRAA=</data>
+					<key>Skip</key>
+					<integer>0</integer>
 				</dict>
 				<dict>
 					<key>Comment</key>
 					<string>Change BTNV to XTNV</string>
+					<key>Count</key>
+					<integer>0</integer>
 					<key>Disabled</key>
 					<false/>
 					<key>Find</key>
 					<data>QlROVgI=</data>
 					<key>Replace</key>
 					<data>WFROVgI=</data>
+					<key>Skip</key>
+					<integer>0</integer>
 				</dict>
 				<dict>
 					<key>Comment</key>
 					<string>HPET _CRS to XCRS Rename</string>
+					<key>Count</key>
+					<integer>0</integer>
 					<key>Disabled</key>
 					<false/>
 					<key>Find</key>
 					<data>JV9DUlM=</data>
 					<key>Replace</key>
 					<data>JVhDUlM=</data>
+					<key>Skip</key>
+					<integer>0</integer>
 				</dict>
 				<dict>
 					<key>Comment</key>
 					<string>IPIC IRQ 2 Patch</string>
+					<key>Count</key>
+					<integer>0</integer>
 					<key>Disabled</key>
 					<false/>
 					<key>Find</key>
 					<data>IgQAeQA=</data>
 					<key>Replace</key>
 					<data>IgAAeQA=</data>
+					<key>Skip</key>
+					<integer>0</integer>
 				</dict>
 				<dict>
 					<key>Comment</key>
 					<string>RTC IRQ 8 Patch</string>
+					<key>Count</key>
+					<integer>0</integer>
 					<key>Disabled</key>
 					<false/>
 					<key>Find</key>
 					<data>IgABeQA=</data>
 					<key>Replace</key>
 					<data>IgAAeQA=</data>
+					<key>Skip</key>
+					<integer>0</integer>
 				</dict>
 				<dict>
 					<key>Comment</key>
 					<string>TIMR IRQ 0 Patch</string>
+					<key>Count</key>
+					<integer>0</integer>
 					<key>Disabled</key>
 					<false/>
 					<key>Find</key>
 					<data>IgEAeQA=</data>
 					<key>Replace</key>
 					<data>IgAAeQA=</data>
+					<key>Skip</key>
+					<integer>0</integer>
 				</dict>
 			</array>
 			<key>ReuseFFFF</key>
@@ -198,7 +234,7 @@
 		<key>FixHeaders</key>
 		<true/>
 		<key>FixMCFG</key>
-		<false/>
+		<true/>
 		<key>HaltEnabler</key>
 		<false/>
 		<key>SSDT</key>
@@ -255,7 +291,7 @@
 		<key>#XMPDetection</key>
 		<string>-1</string>
 		<key>Arguments</key>
-		<string>-noht40 itlwm_cc=JP alcid=14</string>
+		<string>alcid=14 watchdog=0</string>
 		<key>CustomLogo</key>
 		<false/>
 		<key>Debug</key>
@@ -267,9 +303,9 @@
 		<key>HibernationFixup</key>
 		<false/>
 		<key>NeverDoRecovery</key>
-		<false/>
+		<true/>
 		<key>NeverHibernate</key>
-		<false/>
+		<true/>
 		<key>NoEarlyProgress</key>
 		<false/>
 		<key>RtcHibernateAware</key>
@@ -424,8 +460,6 @@
 		<integer>7</integer>
 		<key>KbdPrevLang</key>
 		<true/>
-		<key>Language</key>
-		<string>en-US:0</string>
 		<key>Mouse</key>
 		<dict>
 			<key>Enabled</key>
@@ -443,11 +477,11 @@
 			<true/>
 			<key>Legacy</key>
 			<false/>
+			<key>Linux</key>
+			<true/>
 			<key>Tool</key>
 			<true/>
 		</dict>
-		<key>ScreenResolution</key>
-		<string>1920x1080</string>
 		<key>ShowOptimus</key>
 		<false/>
 		<key>Theme</key>
@@ -539,8 +573,6 @@
 		<false/>
 		<key>DellSMBIOSPatch</key>
 		<true/>
-		<key>EightApple</key>
-		<false/>
 		<key>KernelLapic</key>
 		<false/>
 		<key>KernelXCPM</key>
@@ -586,49 +618,6 @@
 		<false/>
 		<key>KernelCache</key>
 		<string>Auto</string>
-		<key>MmioWhitelist</key>
-		<array>
-			<dict>
-				<key>Address</key>
-				<integer>4026531840</integer>
-				<key>Comment</key>
-				<string>MMIO devirt 0xF0000000 (0x8000 pages, 0x800000000000100D)</string>
-				<key>Enabled</key>
-				<true/>
-			</dict>
-			<dict>
-				<key>Address</key>
-				<integer>4261412864</integer>
-				<key>Comment</key>
-				<string>MMIO devirt 0xFE000000 (0x11 pages, 0x8000000000000001)</string>
-				<key>Enabled</key>
-				<true/>
-			</dict>
-			<dict>
-				<key>Address</key>
-				<integer>4273995776</integer>
-				<key>Comment</key>
-				<string>MMIO devirt 0xFEC00000 (0x1 pages, 0x8000000000000001)</string>
-				<key>Enabled</key>
-				<true/>
-			</dict>
-			<dict>
-				<key>Address</key>
-				<integer>4276092928</integer>
-				<key>Comment</key>
-				<string>MMIO devirt 0xFEE00000 (0x1 pages, 0x8000000000000001)</string>
-				<key>Enabled</key>
-				<true/>
-			</dict>
-			<dict>
-				<key>Address</key>
-				<integer>4278190080</integer>
-				<key>Comment</key>
-				<string>MMIO devirt 0xFF000000 (0x1000 pages, 0x800000000000100D)</string>
-				<key>Enabled</key>
-				<true/>
-			</dict>
-		</array>
 		<key>PowerTimeoutKernelPanic</key>
 		<true/>
 		<key>ProtectMemoryRegions</key>
@@ -664,8 +653,8 @@
 		<string>0x28</string>
 		<key>CsrActiveConfig</key>
 		<string>0x287</string>
-		<key>HWTarget</key>
-		<string>J132AP</string>
+		<key>MLB</key>
+		<string>C02048701GUJH4RA8</string>
 		<key>ROM</key>
 		<string>UseMacAddr0</string>
 	</dict>
@@ -731,6 +720,8 @@
 		<string>Mac-827FB448E656EC26</string>
 		<key>BoardManufacturer</key>
 		<string>Apple Inc.</string>
+		<key>BoardSerialNumber</key>
+		<string>C02048701GUJH4RA8</string>
 		<key>BoardType</key>
 		<integer>10</integer>
 		<key>BoardVersion</key>
@@ -763,6 +754,10 @@
 		<string>0x32</string>
 		<key>ProductName</key>
 		<string>MacBookPro15,2</string>
+		<key>SerialNumber</key>
+		<string>C02DRNYNJHCC</string>
+		<key>SmUUID</key>
+		<string>929DD190-6ACD-4CE3-984D-DEAD67036675</string>
 		<key>Version</key>
 		<string>1.0</string>
 	</dict>
