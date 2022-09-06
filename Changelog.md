@@ -1,5 +1,9 @@
 Dell Inspiron G7 7588 Changelog
 ===============================
+#### Tarutaru Updates: Sep 2022
+- Remove MMIO whitelist.
+- Some optimisations.
+
 #### Tarutaru Updates: July 2022
 - Add MMIO whitelist.
 

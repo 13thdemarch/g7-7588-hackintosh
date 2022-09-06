@@ -23,7 +23,8 @@ This EFI repository contains the files needed to successfully boot into macOS on
 
 ### Latest changelog
 
-- Add MMIO whitelist.
+- Remove MMIO whitelist.
+- Some optimisations.
 
 ## Guide
 
