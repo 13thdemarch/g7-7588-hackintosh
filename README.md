@@ -1,17 +1,6 @@
 <h1 align="center"> Dell Inspiron G7 7588 Hackintosh </h1>
 
 <p align="center">
-  <a href="https://www.apple.com/">
-    <img src="https://img.shields.io/badge/macOS-11.6.7-red"></a> &nbsp;&nbsp;
-  <a href="https://www.dell.com/support/home/en-vn/drivers/driversdetails?driverid=1dkg0&oscode=wt64a&productcode=g-series-15-7588-laptop">
-    <img src="https://img.shields.io/badge/BIOS-1.21-blue"></a> &nbsp;&nbsp;
-  <a href="https://github.com/acidanthera/OpenCorePkg">
-    <img src="https://img.shields.io/badge/OpenCore-0.8.2-12AED6"></a> &nbsp;&nbsp;
-  <a href="https://github.com/CloverHackyColor/CloverBootloader">
-    <img src="https://img.shields.io/badge/Clover-5148-00CC00"></a> &nbsp;&nbsp;
-</p>
-
-<p align="center">
   <img src="./asset/g7.png" alt="Dell G7 7588" width="40%">
 </p>
 
