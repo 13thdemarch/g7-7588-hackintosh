@@ -1,6 +1,6 @@
 <h1 align="center"> Dell Inspiron G7 7588 Hackintosh </h1>
 
-* Announcement: Because the EFI is very stable until now and also I've just sold my G7 and bought a Macbook Pro M1. So start from this month, Nov 2022, I will no longer update my EFI and leave the GitHub repo as is.
+## Announcement: Because the EFI is very stable until now and also I've just sold my G7 and bought a Macbook Pro M1. So start from this month, Nov 2022, I will no longer update my EFI and leave the GitHub repo as is.
 
 <p align="center">
   <img src="./asset/g7.png" alt="Dell G7 7588" width="40%">
